@@ -1,0 +1,44 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+input{
+	@apply focus:outline-none border-b border-gray-400 
+}
+
+@layer utilities {
+  .filter-grayscale {
+    filter: grayscale(100%);
+  }
+}
+
+@variants hover, focus {
+  .filter-none {
+    filter: none;
+  }
+}
+
+.table{
+	width: 100%;
+	margin: 20px 0px;
+}
+
+.table tr td{
+	@apply border border-gray-200 px-2 py-1
+}
+
+blockquote{
+  @apply border-l-4 border-gray-300 p-6 my-10
+}
+
+.content-new ol {
+    list-style: decimal;
+    margin: 0;
+    padding-left: 24px;
+    font-weight: bold;
+}
+
+.content-new p {
+    text-indent: 40px;
+    margin: 12px 2px;
+}
