@@ -11,12 +11,13 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                sans: ['Poppins','Nunito', ...defaultTheme.fontFamily.sans],
             },
             colors: {
-              actionblue: '#094b74',
+              actionblue: '#0077c7',
               textcolor: '#344055',
               footerbg: '#202c39',
+              textblack: '#232323',
             },
            fill: ['hover', 'focus'],
 

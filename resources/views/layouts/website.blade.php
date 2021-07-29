@@ -13,6 +13,9 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300&display=swap" rel="stylesheet">
 
         @yield('styles')
         @livewireStyles
@@ -20,7 +23,7 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans  antialiased">
         <div class="content">
         	<header class="sticky top-0 bg-white z-10">
                 @if( auth()->user() )
@@ -33,86 +36,90 @@
                         </div>
                     </div>
                 @endif
-                <div class="shadow-md">
-            		<div class="flex justify-between py-6 mx-auto max-w-6xl ">
-            			<div class="px-6">
-            				<img src="/logo-acao-comunicativa.png" class="w-40" alt="">
-            			</div>
-            			<div class="w-40 flex items-center"> 
-                            <div class="rounded-full bg-black bg-opacity-70 p-2 text-center mx-3 text-white cursor-pointer hover:bg-opacity-100">
-                                <a href="https://www.facebook.com/acaocomunicativasaude" target="_blank">
-                				    <svg viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet" width="26" height="26" fill='white'>
-                                      <path d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z"></path>
-                                    </svg>
-                                </a>
+                <div class="bg-actionblue text-white py-3">
+                    <div class="mx-auto max-w-6xl text-white flex justify-between text-sm">
+                        <div class="flex">
+                            <div class="pr-4 border-r border-white font-bold">
+                                Verba Saúde
                             </div>
-            				<div class="rounded-full bg-black bg-opacity-70 p-2 text-center mx-3 text-white cursor-pointer hover:bg-opacity-100">
-                                <a href="https://www.instagram.com/acaocomunicativasaude/" target="_blank">
-                                    <svg viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet" width="26" height="26" fill='white'>
-                                      <path d="M256 109.3c47.8 0 53.4 0.2 72.3 1 17.4 0.8 26.9 3.7 33.2 6.2 8.4 3.2 14.3 7.1 20.6 13.4 6.3 6.3 10.1 12.2 13.4 20.6 2.5 6.3 5.4 15.8 6.2 33.2 0.9 18.9 1 24.5 1 72.3s-0.2 53.4-1 72.3c-0.8 17.4-3.7 26.9-6.2 33.2 -3.2 8.4-7.1 14.3-13.4 20.6 -6.3 6.3-12.2 10.1-20.6 13.4 -6.3 2.5-15.8 5.4-33.2 6.2 -18.9 0.9-24.5 1-72.3 1s-53.4-0.2-72.3-1c-17.4-0.8-26.9-3.7-33.2-6.2 -8.4-3.2-14.3-7.1-20.6-13.4 -6.3-6.3-10.1-12.2-13.4-20.6 -2.5-6.3-5.4-15.8-6.2-33.2 -0.9-18.9-1-24.5-1-72.3s0.2-53.4 1-72.3c0.8-17.4 3.7-26.9 6.2-33.2 3.2-8.4 7.1-14.3 13.4-20.6 6.3-6.3 12.2-10.1 20.6-13.4 6.3-2.5 15.8-5.4 33.2-6.2C202.6 109.5 208.2 109.3 256 109.3M256 77.1c-48.6 0-54.7 0.2-73.8 1.1 -19 0.9-32.1 3.9-43.4 8.3 -11.8 4.6-21.7 10.7-31.7 20.6 -9.9 9.9-16.1 19.9-20.6 31.7 -4.4 11.4-7.4 24.4-8.3 43.4 -0.9 19.1-1.1 25.2-1.1 73.8 0 48.6 0.2 54.7 1.1 73.8 0.9 19 3.9 32.1 8.3 43.4 4.6 11.8 10.7 21.7 20.6 31.7 9.9 9.9 19.9 16.1 31.7 20.6 11.4 4.4 24.4 7.4 43.4 8.3 19.1 0.9 25.2 1.1 73.8 1.1s54.7-0.2 73.8-1.1c19-0.9 32.1-3.9 43.4-8.3 11.8-4.6 21.7-10.7 31.7-20.6 9.9-9.9 16.1-19.9 20.6-31.7 4.4-11.4 7.4-24.4 8.3-43.4 0.9-19.1 1.1-25.2 1.1-73.8s-0.2-54.7-1.1-73.8c-0.9-19-3.9-32.1-8.3-43.4 -4.6-11.8-10.7-21.7-20.6-31.7 -9.9-9.9-19.9-16.1-31.7-20.6 -11.4-4.4-24.4-7.4-43.4-8.3C310.7 77.3 304.6 77.1 256 77.1L256 77.1z"></path>
-                                      <path d="M256 164.1c-50.7 0-91.9 41.1-91.9 91.9s41.1 91.9 91.9 91.9 91.9-41.1 91.9-91.9S306.7 164.1 256 164.1zM256 315.6c-32.9 0-59.6-26.7-59.6-59.6s26.7-59.6 59.6-59.6 59.6 26.7 59.6 59.6S288.9 315.6 256 315.6z"></path>
-                                      <circle cx="351.5" cy="160.5" r="21.5"></circle>
-                                    </svg>
-                                </a>
-                                
+                            <div class="pl-4">
+                                Cidade de São Paulo recebeu R$ 1.453.234,00 em verbas públicas
                             </div>
+                        </div>
+                        <div class="flex space-x-4">
+                            <div> Social Media</div>
+                            <div class="flex">
+                                <div class="px-3 border-r border-l"> Login </div>
+                                <div class="px-3 border-r"> Assinar </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-b-2">
+            		<div class="flex justify-between items-center py-2 mx-auto max-w-6xl ">
+            			<div class="text-2xl">
+            				Ação Comunicativa
             			</div>
+            			<div>
+                            <nav x-data="{menu:false}" class="text-right xs:hidden ">
+                                <button @click='menu = true' class="px-6 py-3">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                                </button>  
+                                <ul x-show.transition='menu' @click.away='menu = false' class="absolute text-left text-2xl right-0 bg-white  shadow-2xl w-full  divide divide-y text-sm divide-gray-200 border-b border-gray-200" style="display: none;">
+                                    <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                        <a href="{{route('home')}}">Home</a>
+                                    </li>
+                                    <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                        <a href="{{route('noticias')}}">Notícias</a>
+                                    </li>
+                                    <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                        <a href="{{route('videos')}}">Vídeos</a>
+                                    </li>
+                                    <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                        <a href="{{route('boletims')}}">Boletim AC Saúde</a>
+                                    </li>
+                                    <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                        <a href="{{route('newsletter')}}">Newsletter</a>
+                                    </li>
+                                    <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                        <a href="{{route('quemSomos')}}">Quem Somos</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <nav class="flex justify-between relative overflow-hidden w-0 h-0 xs:w-full xs:h-auto max-w-6xl mx-auto text-sm">
+                                <ul class="flex flex-1 uppercase items-center font-bold  w-full">
+                                    <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                           <a href="{{route('home')}}">Home</a>
+                                       </li>
+                                    <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                           <a href="{{route('noticias')}}">Notícias</a>
+                                       </li>
+                                    <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                           <a href="{{route('videos')}}">Vídeos</a>
+                                       </li>
+                                    <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                           <a href="{{route('boletims')}}">Boletim AC Saúde</a>
+                                       </li>
+                                    <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                           <a href="{{route('newsletter')}}">Newsletter</a>
+                                       </li>
+                                    <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                           <a href="{{route('quemSomos')}}">Quem Somos</a>
+                                       </li>
+                                </ul>
+                               <ul class="flex uppercase items-center font-bold  ">
+                                   @livewire('search-bar',key('desk'))
+                               </ul>
+                            </nav>         
+                        </div>
             		</div>
                 </div>
-                <nav x-data="{menu:false}" class="text-right xs:hidden ">
-                    <button @click='menu = true' class="px-6 py-3">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                    </button>  
-                    <ul x-show.transition='menu' @click.away='menu = false' class="absolute text-left text-2xl right-0 bg-white  shadow-2xl w-full  divide divide-y text-sm divide-gray-200 border-b border-gray-200" style="display: none;">
-                        <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                            <a href="{{route('home')}}">Home</a>
-                        </li>
-                        <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                            <a href="{{route('noticias')}}">Notícias</a>
-                        </li>
-                        <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                            <a href="{{route('videos')}}">Vídeos</a>
-                        </li>
-                        <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                            <a href="{{route('boletims')}}">Boletim AC Saúde</a>
-                        </li>
-                        <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                            <a href="{{route('newsletter')}}">Newsletter</a>
-                        </li>
-                        <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                            <a href="{{route('quemSomos')}}">Quem Somos</a>
-                        </li>
-                    </ul>
-                </nav>
-        		<nav class=" flex justify-between relative overflow-hidden w-0 h-0 xs:w-full xs:h-auto max-w-6xl mx-auto">
-        			<ul class="flex flex-1 uppercase items-center font-bold border-b border-gray-200 w-full">
-    				<li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                            <a href="{{route('home')}}">Home</a>
-                        </li>
-        				<li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                            <a href="{{route('noticias')}}">Notícias</a>
-                        </li>
-        				<li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                            <a href="{{route('videos')}}">Vídeos</a>
-                        </li>
-        				<li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                            <a href="{{route('boletims')}}">Boletim AC Saúde</a>
-                        </li>
-        				<li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                            <a href="{{route('newsletter')}}">Newsletter</a>
-                        </li>
-        				<li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                            <a href="{{route('quemSomos')}}">Quem Somos</a>
-                        </li>
-        			</ul>
-                    <ul class="flex uppercase items-center font-bold border-b border-gray-200 ">
-                        @livewire('search-bar',key('desk'))
-                    </ul>
-        		</nav>
         	</header>
-                @yield('content')
-    		<footer class=" text-gray-400" style="background: #f4f7f6">
-    			<div class="h-80 py-20 text-center ">
+                
+            @yield('content')
+
+    		<footer class=" text-gray-400 bg-actionblue">
+    			<div class="h-80 py-20 text-center " style="background: #f4f7f6">
     				<div>
     					<div class="text-black font-bold mb-6 text-center">
                             AÇÃO COM VOCÊ
@@ -129,31 +136,31 @@
     				</div>
     			</div>
                 <div>
-                    <nav class="  flex justify-center shadow-xl bg-actionblue">
-                        <ul class="text-center xs:flex uppercase text-white font-bold">
-                            <li class="px-3 py-2 xs:py-6 text-white">
+                    <nav class="  flex justify-center bg-actionblue py-10">
+                        <ul class="text-center xs:flex uppercase text-white font-bold divide divide-x divide-gray-300">
+                            <li class="px-3  text-white">
                                 <a href="{{route('home')}}">Home</a>
                             </li>
-                            <li class="px-3 py-2 xs:py-6 text-white">
+                            <li class="px-3  text-white">
                                 <a href="{{route('noticias')}}">Notícias</a>
                             </li>
-                            <li class="px-3 py-2 xs:py-6 text-white">
+                            <li class="px-3  text-white">
                                 <a href="{{route('videos')}}">Vídeos</a>
                             </li>
-                            <li class="px-3 py-2 xs:py-6 text-white">
+                            <li class="px-3  text-white">
                                 <a href="{{route('boletims')}}">Boletim AC Saúde</a>
                             </li>
-                            <li class="px-3 py-2 xs:py-6 text-white">
+                            <li class="px-3  text-white">
                                 <a href="{{route('newsletter')}}">Newsletter</a>
                             </li>
-                            <li class="px-3 py-2 xs:py-6 text-white">
+                            <li class="px-3  text-white">
                                 <a href="{{route('quemSomos')}}">Quem Somos</a>
                             </li>
                         </ul>
                     </nav>
                 </div>
-    			<div class="border-t border-gray-200 border-opacity-10 p-5 bg-white flex justify-center text-gray-500">
-    				Copyright - {{ config('app.name') }}
+    			<div class="text-white border-t border-gray-200 border-opacity-10 p-5  flex justify-center text-xs bg-black bg-opacity-30">
+    				Copyright - {{ config('app.name') }} - {{ date('Y') }}
     			</div>
     		</footer>
         </div>
