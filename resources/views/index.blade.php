@@ -2,20 +2,23 @@
 
 @section('content')
 
-<div class="w-full grid grid-cols-3 gap-1 py-10">
+<div class="w-full grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 py-10 owl-carousel">
+	
 	@if( $newsCall = \App\Models\News::where('call',1)->first())
 		<div class="bg-black h-96 flex flex-col justify-between" style="background: url('{{asset('storage/'.$newsCall->cover)}}') no-repeat; background-size: cover ">
 			<div></div>
 			<div class="">
-				<div class="bg-blue-600 rounded-tr px-2 py-1 text-white font-bold text-xs w-16">
-					Notícias
-				</div>
-				<div class="bg-black bg-opacity-50 text-white py-4 borer-l border-green-500 px-6">
+				<div class="bg-black bg-opacity-50 text-white py-4 borer-l border-green-500 px-6 relative">
 					<div class="flex justify-between">
-						<div class="font-bold">{{ $newsCall->title}}</div>
+						<div class="font-bold truncate">{{ $newsCall->title}}</div>
 						<div class="text-xs">{{ date('d/M/y',strtotime($newsCall->date))}}</div>
 					</div>
-					<div class="text-sm">{{ substr( $newsCall->short_text , 0 , 100 ) }}</div>
+					<div class="text-sm line-clamp-2 h-10">
+						{{ substr( $newsCall->short_text , 0 , 100 ) }}
+					</div>
+					<div class="bg-blue-600 rounded-tl  px-2 py-1 text-white font-bold text-xs absolute right-0 bottom-0 ">
+						Notícias
+					</div>
 				</div>
 			</div>
 		</div>
@@ -27,15 +30,16 @@
 		<div class="bg-black h-96 flex flex-col justify-between"  style="background: url('{{asset('storage/'.$newsCall->cover)}}') no-repeat; background-size: cover ">
 			<div></div>
 			<div class="">
-				<div class="bg-blue-600 rounded-tr px-2 py-1 text-white font-bold text-xs w-16">
-					Vídeos
-				</div>
-				<div class="bg-black bg-opacity-50 text-white py-4 borer-l border-green-500 px-6">
+				
+				<div class="bg-black bg-opacity-50 text-white py-4 borer-l border-green-500 px-6 relative">
 					<div class="flex justify-between">
-						<div class="font-bold">{{ $newsCall->title}}</div>
-						<div class="text-xs">{{ date('d/M/y',strtotime($newsCall->date))}}</div>
+						<div class="font-bold truncate">{{ $newsCall->title}}</div>
+						<div class="text-xs ">{{ date('d/M/y',strtotime($newsCall->date))}}</div>
 					</div>
-					<div class="text-sm">{{ substr( $newsCall->short_text , 0 , 100 ) }}</div>
+					<div class="text-sm line-clamp-2 h-10">{{ substr( $newsCall->short_text , 0 , 100 ) }}</div>
+					<div class="bg-blue-600 rounded-tl  px-2 py-1 text-white font-bold text-xs absolute right-0 bottom-0 ">
+						Vídeos
+					</div>
 				</div>
 			</div>
 		</div>
@@ -45,21 +49,41 @@
 		<div class="bg-black h-96 flex flex-col justify-between"  style="background: url('{{asset('storage/'.$newsCall->cover)}}') no-repeat; background-size: cover ">
 			<div></div>
 			<div class="">
-				<div class="bg-blue-600 rounded-tr px-2 py-1 text-white font-bold text-xs w-16">
-					#Saude
-				</div>
 				
-				<div class="bg-black bg-opacity-50 text-white py-4 borer-l border-green-500 px-6">
+				<div class="bg-black bg-opacity-50 text-white py-4 borer-l border-green-500 px-6 relative">
 					<div class="flex justify-between">
-						<div class="font-bold">{{ $newsCall->title}}</div>
+						<div class="font-bold truncate">{{ $newsCall->title}}</div>
 						<div class="text-xs">{{ date('d/M/y',strtotime($newsCall->date))}}</div>
 					</div>
-					<div class="text-sm">{{ substr( $newsCall->short_text , 0 , 100 ) }}</div>
-
+					<div class="text-sm line-clamp-2 h-10">{{ substr( $newsCall->short_text , 0 , 100 ) }}</div>
+					<div class="bg-blue-600 rounded-tl  px-2 py-1 text-white font-bold text-xs absolute right-0 bottom-0 ">
+						#saude
+					</div>
 				</div>
 			</div>
 		</div>
 	@endif
+
+	@if( $newsCall = \App\Models\Video::where('call',1)->first())
+		<div class="bg-black h-96 flex flex-col justify-between"  style="background: url('{{asset('storage/'.$newsCall->cover)}}') no-repeat; background-size: cover ">
+			<div></div>
+			<div class="">
+				
+				<div class="bg-black bg-opacity-50 text-white py-4 borer-l border-green-500 px-6 relative">
+					<div class="flex justify-between">
+						<div class="font-bold truncate">{{ $newsCall->title}}</div>
+						<div class="text-xs ">{{ date('d/M/y',strtotime($newsCall->date))}}</div>
+					</div>
+					<div class="text-sm line-clamp-2 h-10">{{ substr( $newsCall->short_text , 0 , 100 ) }}</div>
+					<div class="bg-blue-600 rounded-tl  px-2 py-1 text-white font-bold text-xs absolute right-0 bottom-0 ">
+						Vídeos
+					</div>
+				</div>
+			</div>
+		</div>
+	@endif 
+	
+
 </div>
 
 <div class="max-w-6xl mx-auto py-10 px-8 lg:px-0">
@@ -69,9 +93,9 @@
 				Notícias
 				<!-- <div class="border-b-2 border-actionblue w-20"></div> -->
 			</div>
-			<div class="grid md:grid-cols-3 xs:grid-cols-1 gap-6">
+			<div class="grid lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-6">
 				@foreach(\App\Models\News::orderBy('created_at','desc')->get()->take(2) as $key=>$news )
-					<div class="@if( $key == 0 ) grod col-span-2 @endif ">
+					<div class="@if( $key == 0 ) lg:col-span-2 @endif ">
 						<div class="h-96 overflow-hidden" style="background: url('{{asset('/storage/'.$news->cover)}}') no-repeat; background-size: cover; background-position: center; ">
 						</div>
 						<div class="py-10">
@@ -89,11 +113,8 @@
 				@endforeach
 			</div>
 		</div>
-		<div class="mt-10 hidden">
-			<a href='{{route("noticias")}}' class="font-bold">Mais Notícias</a>
-			<div class="border-b-2 border-actionblue w-20"></div>
-		</div>
-		<div class="grid grid-cols-4 gap-4">
+		
+		<div class="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
 			@foreach(\App\Models\News::orderBy('created_at','desc')->get()->skip(2)->take(4) as $news )
 				<div class="hover:bg-gray-50 py-4  border-b border-dashed border-gray-300 group sm:px-4">
 					<a href='{{route("reading",["slug"=>$news->slug])}}'> 	
@@ -113,6 +134,10 @@
 					</a>
 				</div>
 			@endforeach
+		</div>
+		<div class="text-center">
+			<button class="underline mt-10 text-actionblue  text-sm">Mais Notícias</button>
+			<!-- <button class="bg-actionblue px-3 py-2 rounded mt-10 text-white text-sm">Mais Notícias</button> -->
 		</div>
 	</div>
 </div>
@@ -136,9 +161,8 @@
 
 	<div class="">
 		<div>
-			<div class="text-2xl font-bold mb-10">
+			<div class="text-2xl text-center font-bold mb-10">
 				Vídeos
-				<div class="border-b-2 border-actionblue w-20"></div>
 			</div>
 			<div class="grid lg:grid-cols-3  md:grid-cols-2 xs:grid-cols-1 gap-10">
 				@foreach(\App\Models\Video::orderBy('created_at','desc')->get()->take(3) as $video )
@@ -167,28 +191,34 @@
 				@endforeach
 			</div>
 		</div>
-		<div class="mt-10">
-			<div class="text-xl font-bold mb-4">
+		<div class="">
+			<div class="text-xl font-bold mb-4 hidden">
 				<a href='{{route("videos")}}' class="font-bold">Mais Videos</a>
 				<div class="border-b-2 border-actionblue w-20"></div>
 			</div>
-			@foreach(\App\Models\Video::orderBy('created_at','desc')->get()->skip(3)->take(3) as $videos )
-				<div class="hover:bg-gray-50 py-4  border-b border-dashed border-gray-100 group">
-					<a href='{{route("reading",["slug"=>$videos->slug])}}' class="flex"> 	
-						<div class="w-60" style="background: url('{{asset('/storage/'.$videos->cover)}}') no-repeat; background-size: cover ">
-						</div>
-						<div class="sm:px-4">
-							<p class="font-bold group-hover:text-actionblue transition">{{$videos->title}}</p>
-							<p class="text-sm text-gray-600">
-								{{$videos->short_text}}
-							</p>
-							<div class="text-sm py-2 text-gray-700 ">
-								<span class="text-gray-400">{{ date('d/M/y',strtotime($video->date))}}</span> - <b>{{config('app.name')}}</b>
+			<div class="grid-cols-1">
+				@foreach(\App\Models\Video::orderBy('created_at','desc')->get()->skip(3)->take(3) as $videos )
+					<div class="hover:bg-gray-50 py-4  border-b border-dashed border-gray-100 group">
+						<a href='{{route("reading",["slug"=>$videos->slug])}}' class="flex"> 	
+							<div class="w-0 h-0 sm:w-60 sm:h-40" style="background: url('{{asset('/storage/'.$videos->cover)}}') no-repeat; background-size: cover ">
 							</div>
-						</div>
-					</a>
-				</div>
-			@endforeach
+							<div class="sm:px-4 flex-1">
+								<p class="font-bold group-hover:text-actionblue transition">{{$videos->title}}</p>
+								<p class="text-sm text-gray-600">
+									{{$videos->short_text}}
+								</p>
+								<div class="text-sm py-2 text-gray-700 ">
+									<span class="text-gray-400">{{ date('d/M/y',strtotime($video->date))}}</span> - <b>{{config('app.name')}}</b>
+								</div>
+							</div>
+						</a>
+					</div>
+				@endforeach
+			</div>
+		</div>
+		<div class="text-center">
+			<button class="underline mt-10 text-actionblue  text-sm">Mais Vídeos</button>
+			<!-- <button class="bg-actionblue px-3 py-2 rounded mt-10 text-white text-sm">Mais Vídeos</button> -->
 		</div>
 	</div>
 
@@ -233,5 +263,9 @@
 	</div>
 
 </div>
+
+
+
+
 @endsection
 

@@ -16,6 +16,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
+        <script src="https://kit.fontawesome.com/e1c06b7241.js" crossorigin="anonymous"></script>
 
         @yield('styles')
         @livewireStyles
@@ -37,17 +39,20 @@
                     </div>
                 @endif
                 <div class="bg-actionblue text-white py-3">
-                    <div class="mx-auto max-w-6xl text-white flex justify-between text-sm">
-                        <div class="flex">
-                            <div class="pr-4 border-r border-white font-bold">
-                                Verba Saúde
-                            </div>
-                            <div class="pl-4">
-                                Cidade de São Paulo recebeu R$ 1.453.234,00 em verbas públicas
+                    <div class="mx-auto max-w-6xl text-white text-sm flex flex-col sm:flex-row">
+                        <div class="mx-auto text-center sm:text-left">
+                            <div class="pr-4 sm:flex">
+                                <div class="font-semibold">Verba Saúde: </div>
+                                <div>Cidade de São Paulo recebeu R$ 1.453.234,00 em verbas públicas</div>
                             </div>
                         </div>
-                        <div class="flex space-x-4">
-                            <div> Social Media</div>
+                        <div class="mx-auto text-center sm:flex sm:space-x-3">
+                            <div class="space-x-3">
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-instagram"></i>
+                                <i class="fab fa-youtube"></i>
+                                <i class="fab fa-twitter"></i>
+                            </div>
                             <div class="flex">
                                 <div class="px-3 border-r border-l"> Login </div>
                                 <div class="px-3 border-r"> Assinar </div>
@@ -76,7 +81,7 @@
                                         <a href="{{route('videos')}}">Vídeos</a>
                                     </li>
                                     <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                        <a href="{{route('boletims')}}">Boletim AC Saúde</a>
+                                        <a href="{{route('boletims')}}">Verbas da Saúde</a>
                                     </li>
                                     <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                         <a href="{{route('newsletter')}}">Newsletter</a>
@@ -98,7 +103,7 @@
                                            <a href="{{route('videos')}}">Vídeos</a>
                                        </li>
                                     <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                           <a href="{{route('boletims')}}">Boletim AC Saúde</a>
+                                           <a href="{{route('boletims')}}">Verbas da Saúde</a>
                                        </li>
                                     <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                            <a href="{{route('newsletter')}}">Newsletter</a>
@@ -118,9 +123,25 @@
                 
             @yield('content')
 
-    		<footer class=" text-gray-400 bg-actionblue">
-    			<div class="h-80 py-20 text-center " style="background: #f4f7f6">
-    				<div>
+            <section class="mt-32">
+                <div class="max-w-6xl  bg-actionblue mx-auto -mb-10 relative shadow-xl text-white bg-bottom sm:bg-center "  style="background: url('{{asset('/img/bg-verbas-da-saude.jpg')}}') no-repeat; background-size: cover ;">
+                    <div class="text-center md:flex md:text-left bg-black p-10 bg-opacity-60">
+                        <div class="flex-1">
+                            <div class="text-xl font-semibold">Verbas da Saúde</div>
+                            <div class="text-sm">Plataforma para acompanhar as destinações de verbas da saúde para os municípios</div>
+                        </div>
+                        <div class="m-10 md:m-0 text-center px-6" >
+                            <button class="border border-white px-3 py-2 hover:bg-white hover:text-actionblue">
+                                Acessar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+    		<footer class=" text-gray-400 bg-actionblue -mt-10">
+    			<div class=" py-20 text-center " style="background: #f4f7f6">
+    				<div class="mt-16">
     					<div class="text-black font-bold mb-6 text-center">
                             AÇÃO COM VOCÊ
                             <span class="w-20 block border-b-2 border-blue-800 mx-auto mt-2"></span>
@@ -137,7 +158,7 @@
     			</div>
                 <div>
                     <nav class="  flex justify-center bg-actionblue py-10">
-                        <ul class="text-center xs:flex uppercase text-white font-bold divide divide-x divide-gray-300">
+                        <ul class="text-center xs:flex uppercase text-white font-bold xs:divide xs:divide-x divide-gray-300">
                             <li class="px-3  text-white">
                                 <a href="{{route('home')}}">Home</a>
                             </li>
@@ -148,7 +169,7 @@
                                 <a href="{{route('videos')}}">Vídeos</a>
                             </li>
                             <li class="px-3  text-white">
-                                <a href="{{route('boletims')}}">Boletim AC Saúde</a>
+                                <a href="{{route('boletims')}}">Verbas da Saúde</a>
                             </li>
                             <li class="px-3  text-white">
                                 <a href="{{route('newsletter')}}">Newsletter</a>
@@ -168,7 +189,33 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
         <script src="/js/jquery.mask.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
         <script>
+            $(document).ready(function(){
+                $(".owl-carousel").owlCarousel({
+                    loop:true,
+                    margin:10,
+                    autoplay:true,
+                    autoplayTimeout:3000,
+                    autoplayHoverPause:true,
+                    responsiveClass:true,
+                    responsive:{
+                        0:{
+                            items:1,
+                            nav:true
+                        },
+                        800:{
+                            items:2,
+                            nav:true
+                        },
+                        1200:{
+                            items:3,
+                            nav:false
+                        }
+                    }
+                });
+            });
             var SPMaskBehavior = function (val) {
               return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
             },
