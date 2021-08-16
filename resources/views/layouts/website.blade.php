@@ -39,7 +39,7 @@
                     </div>
                 @endif
                 <div class="bg-actionblue text-white py-3">
-                    <div class="max-w-6xl text-white text-sm flex flex-col sm:flex-row">
+                    <div class="max-w-6xl text-white text-sm flex justify-between flex-col sm:flex-row">
                         <div class="mx-auto sm:text-left">
                             <div class="pr-4 sm:flex">
                                 <div class="font-semibold">Verba Saúde: </div>
