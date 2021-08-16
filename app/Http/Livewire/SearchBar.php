@@ -13,8 +13,8 @@ class SearchBar extends Component
     public function render()
     {
         return view('livewire.search-bar',[
-        	'videos'=>Video::where('title','like','%'.$this->search.'%')->get()->take(5),
-        	'news'=>News::where('title','like','%'.$this->search.'%')->get()->take(5)
+        	'videos'=> \DB::table('videos')->where('title','like','%'.$this->search.'%')->get()->take(5),
+        	'news'=> \DB::table('news')->where('title','like','%'.$this->search.'%')->get()->take(5)
         ]);
     }
 

@@ -40,19 +40,13 @@
                 @endif
                 <div class="bg-actionblue text-white py-3">
                     <div class="mx-auto max-w-6xl text-white text-sm flex flex-col sm:flex-row">
-                        <div class="mx-auto text-center sm:text-left">
+                        <div class="mx-auto sm:text-left">
                             <div class="pr-4 sm:flex">
                                 <div class="font-semibold">Verba Saúde: </div>
                                 <div>Cidade de São Paulo recebeu R$ 1.453.234,00 em verbas públicas</div>
                             </div>
                         </div>
                         <div class="mx-auto text-center sm:flex sm:space-x-3">
-                            <div class="space-x-3">
-                                <i class="fab fa-facebook-f"></i>
-                                <i class="fab fa-instagram"></i>
-                                <i class="fab fa-youtube"></i>
-                                <i class="fab fa-twitter"></i>
-                            </div>
                             <div class="flex">
                                 <div class="px-3 border-r border-l"> Login </div>
                                 <div class="px-3 border-r"> Assinar </div>
@@ -63,7 +57,7 @@
                 <div class="border-b-2">
             		<div class="flex justify-between items-center py-2 mx-auto max-w-6xl ">
             			<div class="text-2xl">
-            				Ação Comunicativa
+            				<img src="{{ asset('img/logo-acao-comunicativa.png') }}" alt="" class="w-100 " style="width: 150px">
             			</div>
             			<div>
                             <nav x-data="{menu:false}" class="text-right xs:hidden ">
@@ -72,47 +66,53 @@
                                 </button>  
                                 <ul x-show.transition='menu' @click.away='menu = false' class="absolute text-left text-2xl right-0 bg-white  shadow-2xl w-full  divide divide-y text-sm divide-gray-200 border-b border-gray-200" style="display: none;">
                                     <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                        <a href="{{route('home')}}">Home</a>
+                                        <a href="{{route('home')}}" title='Home - {{config("app.name") }}'>Home</a>
                                     </li>
                                     <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                        <a href="{{route('noticias')}}">Notícias</a>
+                                        <a href="{{route('noticias')}}" title='Notícias - {{config("app.name") }}'>Notícias</a>
                                     </li>
                                     <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                        <a href="{{route('videos')}}">Vídeos</a>
+                                        <a href="{{route('videos')}}" title='Vídeos - {{config("app.name") }}'>Vídeos</a>
                                     </li>
                                     <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                        <a href="{{route('boletims')}}">Verbas da Saúde</a>
+                                        <a href="{{route('videos')}}" title='Vídeos - {{config("app.name") }}'>#Saude</a>
                                     </li>
                                     <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                        <a href="{{route('newsletter')}}">Newsletter</a>
+                                        <a href="{{route('boletims')}}" title='Verbas da Saúde - {{config("app.name") }}'>Verbas da Saúde</a>
                                     </li>
                                     <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                        <a href="{{route('quemSomos')}}">Quem Somos</a>
+                                        <a href="{{route('newsletter')}}" title='Newsletter - {{config("app.name") }}'>Newsletter</a>
+                                    </li>
+                                    <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                        <a href="{{route('quemSomos')}}" title='Quem Somos - {{config("app.name") }}'>Quem Somos</a>
                                     </li>
                                 </ul>
                             </nav>
                             <nav class="flex justify-between relative overflow-hidden w-0 h-0 xs:w-full xs:h-auto max-w-6xl mx-auto text-sm">
                                 <ul class="flex flex-1 uppercase items-center font-bold  w-full">
                                     <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                           <a href="{{route('home')}}">Home</a>
+                                           <a href="{{route('home')}}" title='Home - {{ config("app.name") }}'>Home</a>
                                        </li>
                                     <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                           <a href="{{route('noticias')}}">Notícias</a>
+                                           <a href="{{route('noticias')}}" title='Notícias - {{ config("app.name") }}'>Notícias</a>
                                        </li>
                                     <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                           <a href="{{route('videos')}}">Vídeos</a>
+                                           <a href="{{route('videos')}}" title='Vídeos - {{ config("app.name") }}'>Vídeos</a>
+                                       </li>
+                                       <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                           <a href="{{route('videos')}}" title='Vídeos - {{ config("app.name") }}'>#Saude</a>
                                        </li>
                                     <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                           <a href="{{route('boletims')}}">Verbas da Saúde</a>
+                                           <a href="{{route('boletims')}}" title='Verbas da Saúde - {{ config("app.name") }}'>Verbas da Saúde</a>
                                        </li>
                                     <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                           <a href="{{route('newsletter')}}">Newsletter</a>
+                                           <a href="{{route('newsletter')}}" title='Newsletter - {{ config("app.name") }}'>Newsletter</a>
                                        </li>
                                     <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                           <a href="{{route('quemSomos')}}">Quem Somos</a>
+                                           <a href="{{route('quemSomos')}}" title='Quem Somos - {{ config("app.name") }}'>Quem Somos</a>
                                        </li>
                                 </ul>
-                               <ul class="flex uppercase items-center font-bold  ">
+                               <ul class="flex items-center">
                                    @livewire('search-bar',key('desk'))
                                </ul>
                             </nav>         
@@ -138,6 +138,10 @@
                     </div>
                 </div>
             </section>
+           
+            <div class="relative">
+                <img src="{{ asset('img/marca-dagua.png') }}" class="opacity-5 absolute left-0 " style="top: -250px; left: -300px">
+            </div>
 
     		<footer class=" text-gray-400 bg-actionblue -mt-10">
     			<div class=" py-20 text-center " style="background: #f4f7f6">
@@ -149,7 +153,7 @@
                         <p class="text-gray-600">+55 (61) 99132-6324</p>
                         <p class="text-gray-600">+55 (61) 3253-5422</p>
                         <p class="text-gray-600"> 
-                            <a href='mailto:contato@acaocomunicativa.com.br' class="text-blue-900">contato@acaocomunicativa.com.br</a>
+                            <a href='mailto:contato@acaocomunicativa.com.br' title='Falar com a {{ config("app.name") }}' class="text-blue-900">contato@acaocomunicativa.com.br</a>
                         </p>
                         <p class="text-gray-600 mt-4"> 
                             SHIS QI 09 Bloco A sala 107 Lago Sul – Brasília – DF CEP: 71.625-171
@@ -160,25 +164,34 @@
                     <nav class="  flex justify-center bg-actionblue py-10">
                         <ul class="text-center xs:flex uppercase text-white font-bold xs:divide xs:divide-x divide-gray-300">
                             <li class="px-3  text-white">
-                                <a href="{{route('home')}}">Home</a>
+                                <a href="{{route('home')}}" title='Home - {{ config("app.name") }}'>Home</a>
                             </li>
                             <li class="px-3  text-white">
-                                <a href="{{route('noticias')}}">Notícias</a>
+                                <a href="{{route('noticias')}}" title='Notícias - {{ config("app.name") }}'>Notícias</a>
                             </li>
                             <li class="px-3  text-white">
-                                <a href="{{route('videos')}}">Vídeos</a>
+                                <a href="{{route('videos')}}" title='Vídeos - {{ config("app.name") }}'>Vídeos</a>
                             </li>
                             <li class="px-3  text-white">
-                                <a href="{{route('boletims')}}">Verbas da Saúde</a>
+                                <a href="{{route('videos')}}" title='Vídeos - {{ config("app.name") }}'>#saude</a>
                             </li>
                             <li class="px-3  text-white">
-                                <a href="{{route('newsletter')}}">Newsletter</a>
+                                <a href="{{route('boletims')}}" title='Verbas da Saúde - {{ config("app.name") }}'>Verbas da Saúde</a>
                             </li>
                             <li class="px-3  text-white">
-                                <a href="{{route('quemSomos')}}">Quem Somos</a>
+                                <a href="{{route('newsletter')}}" title='Newsletter - {{ config("app.name") }}'>Newsletter</a>
+                            </li>
+                            <li class="px-3  text-white">
+                                <a href="{{route('quemSomos')}}" title='Quem Somos - {{ config("app.name") }}'>Quem Somos</a>
                             </li>
                         </ul>
                     </nav>
+                </div>
+                <div class="space-x-3 mx-auto text-white flex justify-center pb-10">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-twitter"></i>
                 </div>
     			<div class="text-white border-t border-gray-200 border-opacity-10 p-5  flex justify-center text-xs bg-black bg-opacity-30">
     				Copyright - {{ config('app.name') }} - {{ date('Y') }}
@@ -194,9 +207,9 @@
         <script>
             $(document).ready(function(){
                 $(".owl-carousel").owlCarousel({
-                    loop:true,
+                    // loop:true,
                     margin:10,
-                    autoplay:true,
+                    // autoplay:true,
                     autoplayTimeout:3000,
                     autoplayHoverPause:true,
                     responsiveClass:true,

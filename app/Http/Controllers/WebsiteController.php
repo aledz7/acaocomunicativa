@@ -19,7 +19,16 @@ class WebsiteController extends Controller
         $config = Configuration::pluck('value','field');
         if( $config['maintenance'] == 1  && auth()->guest() ) return view('maintenance');
 
-    	return view('index');
+
+        $news       = \DB::table('news')->orderBy('created_at','desc')->get();
+        $videos     = \DB::table('videos')->orderBy('created_at','desc')->get();
+        $boletims   = \DB::table('boletims')->orderBy('created_at','desc')->get();
+    	
+        return view('index',[
+            'news'=>$news,
+            'videos'=>$videos,
+            'boletims'=>$boletims
+        ]);
     }
 
     public function newsCategory($slug = null)

@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use Carbon\Carbon;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
+
 
 Route::get('send-news/{id}',function($id){
     $news = App\Models\News::find($id);
@@ -18,6 +22,52 @@ Route::get('send-news/{id}',function($id){
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('sitemap',function(){
+
+    $sitemap = Sitemap::create();
+
+    foreach( \App\Models\News::get() as $new )
+    {
+        $sitemap->add(Url::create($new->slug)
+            ->setLastModificationDate(Carbon::yesterday())
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY)
+            ->setPriority(0.1));
+        $sitemap->add(Url::create('print-'.$new->slug)
+            ->setLastModificationDate(Carbon::yesterday())
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY)
+            ->setPriority(0.1));
+
+    }
+    foreach( \App\Models\Video::get() as $new )
+    {
+        $sitemap->add(Url::create($new->slug)
+            ->setLastModificationDate(Carbon::yesterday())
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY)
+            ->setPriority(0.1));
+
+    }
+
+    foreach( \App\Models\Category::where('type','news')->get() as $new )
+    {
+        $sitemap->add(Url::create('noticias-'.$new->slug)
+            ->setLastModificationDate(Carbon::yesterday())
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY)
+            ->setPriority(0.1));
+
+    }
+
+    foreach( \App\Models\Category::where('type','video')->get() as $new )
+    {
+        $sitemap->add(Url::create('videos-'.$new->slug)
+            ->setLastModificationDate(Carbon::yesterday())
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY)
+            ->setPriority(0.1));
+
+    }
+
+    $sitemap->writeToFile('sitemap.xml');
+});
 
 Route::get('/',[App\Http\Controllers\WebsiteController::class,'index'])->name('home');
 Route::get('/noticias',[App\Http\Controllers\WebsiteController::class,'newsCategory'])->name('noticias');

@@ -3,7 +3,10 @@
 @section('styles')
 <link rel="stylesheet" href="/css/socialshare.css">
 <link rel="stylesheet" href="/font/fontello/css/fontello.css">
+@endsection
 
+@section('title')
+	Notícias {{@$category->name}}
 @endsection
 
 @section('content')
@@ -11,7 +14,7 @@
 	<div class="md:flex">
 		<div class="md:pr-10 flex-1">
 			<div class="text-xl font-bold mb-10 ">
-				Notícias {{@$category->name}}
+				<h1>Notícias {{@$category->name}}</h1>
 				<div class="border-b-2 border-actionblue w-20"></div>
 			</div>
 			<div class="space-y-14">
@@ -19,7 +22,7 @@
 					@foreach($news as $key => $news )
 						<div class="sm:flex ">
 							<div class="w-full h-52  overflow-hidden sm:w-4/12 sm:h-48" >
-								<img src="{{ $news->coverImg }}" alt="{{$news->slug}} - {{config('app.name')}}" title="{{$news->slug}} - {{config('app.name')}}" >
+								<img src="{{ $news->coverImg }}" alt="{{$news->slug}} - {{config('app.name')}}" title="{{$news->title}} - {{config('app.name')}}" >
 							</div>
 							<div class="w-full pt-6 sm:pt-0 sm:w-8/12 sm:px-6 group flex flex-col justify-between">
 								<a href="{{route('reading',$news->slug)}}">
@@ -28,10 +31,10 @@
 											<span class="text-actionblue font-bold text-sm">{{$category->name}}</span>
 										@endforeach
 									</p>
-									<p class="group-hover:text-actionblue transition duration-500 ease-in-out font-bolt text-xl text-black font-bold">{{$news->title}}</p>
-									<p class="group-hover:text-actionblue transition duration-500 ease-in-out text-sm text-gray-800 py-4">
+									<h2 class="group-hover:text-actionblue transition duration-500 ease-in-out font-bolt text-xl text-black font-bold">{{$news->title}}</h2>
+									<h3 class="group-hover:text-actionblue transition duration-500 ease-in-out text-sm text-gray-800 py-4">
 										{{$news->short_text}}
-									</p>
+									</h3>
 								</a>
 								@include('social-share')
 							</div>

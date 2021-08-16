@@ -14,7 +14,7 @@ module.exports = {
                 sans: ['Poppins','Nunito', ...defaultTheme.fontFamily.sans],
             },
             colors: {
-              actionblue: '#0077c7',
+              actionblue: '#224d7a',
               textcolor: '#344055',
               footerbg: '#202c39',
               textblack: '#232323',
