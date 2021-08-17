@@ -29,7 +29,7 @@
         <div class="content">
         	<header class="sticky top-0 bg-white z-10">
                 @if( auth()->user() )
-                    <div class="bg-actionblue text-white py-1">
+                    <div class="bg-gray-700 text-white py-1">
                         <div class="max-w-6xl mx-auto text-right text-sm">
                             {{auth()->user()->name }} 
                             @if( auth()->user()->role_id == 0 ) - <a href='{{route("admin.dashboard")}}'>Painel Administrativo</a>  @endif -
@@ -88,33 +88,38 @@
                                     </li>
                                 </ul>
                             </nav>
-                            <nav class="flex justify-between relative overflow-hidden w-0 h-0 xs:w-full xs:h-auto max-w-6xl mx-auto text-sm">
+                            <nav class="flex flex-col justify-end relative overflow-hidden w-0 h-0 xs:w-full xs:h-auto max-w-6xl mx-auto text-sm">
+                                <ul>
+                                    <div class="space-x-3 text-black mx-auto flex justify-end py-2">
+                                        <i class="fab fa-facebook-f"></i>
+                                        <i class="fab fa-instagram"></i>
+                                        <i class="fab fa-youtube"></i>
+                                        <i class="fab fa-twitter"></i>
+                                    </div>
+                                </ul>
                                 <ul class="flex flex-1 uppercase items-center font-bold  w-full">
-                                    <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                    <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                            <a href="{{route('home')}}" title='Home - {{ config("app.name") }}'>Home</a>
                                        </li>
-                                    <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                    <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                            <a href="{{route('noticias')}}" title='Notícias - {{ config("app.name") }}'>Notícias</a>
                                        </li>
-                                    <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                    <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                            <a href="{{route('videos')}}" title='Vídeos - {{ config("app.name") }}'>Vídeos</a>
                                        </li>
-                                       <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                       <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                            <a href="{{route('videos')}}" title='Vídeos - {{ config("app.name") }}'>#Saude</a>
                                        </li>
-                                    <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                    <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                            <a href="{{route('boletims')}}" title='Verbas da Saúde - {{ config("app.name") }}'>Verbas da Saúde</a>
                                        </li>
-                                    <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                    <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                            <a href="{{route('newsletter')}}" title='Newsletter - {{ config("app.name") }}'>Newsletter</a>
                                        </li>
-                                    <li class="px-3 py-6 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                    <li class="pl-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                            <a href="{{route('quemSomos')}}" title='Quem Somos - {{ config("app.name") }}'>Quem Somos</a>
-                                       </li>
+                                    </li>
                                 </ul>
-                               <ul class="flex items-center">
-                                   @livewire('search-bar',key('desk'))
-                               </ul>
                             </nav>         
                         </div>
             		</div>

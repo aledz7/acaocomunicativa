@@ -2,10 +2,10 @@
 
 @section('content')
 
-<div class="w-full grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 py-10 owl-carousel">
+<div class="max-w-6xl mx-auto grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 py-10 owl-carousel">
 	
 	@if( $newsCall = $news->where('call',1)->first() )
-		<div class="bg-black h-96 flex flex-col justify-between" style="background: url('{{asset('storage/'.$newsCall->cover)}}') no-repeat; background-size: cover ">
+		<div class="bg-black h-64 flex flex-col justify-between" style="background: url('{{asset('storage/'.$newsCall->cover)}}') no-repeat; background-size: cover ">
 			<div></div>
 			<div class="bg-actionblue rounded-bl  px-2 py-1 text-white font-bold absolute right-0 top-0 ">
 				Notícias
@@ -27,7 +27,7 @@
 
 
 	@if( $newsVideo = $videos->where('call',1)->first() )
-		<div class="bg-black h-96 flex flex-col justify-between"  style="background: url('{{asset('storage/'.$newsVideo->cover)}}') no-repeat; background-size: cover ">
+		<div class="bg-black h-64 flex flex-col justify-between"  style="background: url('{{asset('storage/'.$newsVideo->cover)}}') no-repeat; background-size: cover ">
 			<div></div>
 			<div class="bg-actionblue rounded-bl  px-2 py-1 text-white font-bold absolute right-0 top-0 ">
 				Vídeos
@@ -46,7 +46,7 @@
 	@endif 
 	
 	@if( $newsBoletim = $boletims->where('call',1)->first() )
-		<div class="bg-black h-96 flex flex-col justify-between"  style="background: url('{{asset('storage/'.$newsBoletim->cover)}}') no-repeat; background-size: cover ">
+		<div class="bg-black h-64 flex flex-col justify-between"  style="background: url('{{asset('storage/'.$newsBoletim->cover)}}') no-repeat; background-size: cover ">
 			<div></div>
 			<div class="bg-actionblue rounded-bl  px-2 py-1 text-white font-bold absolute right-0 top-0 ">
 				#saude
@@ -80,7 +80,7 @@
 				@foreach( $news->take(2) as $key=>$new )
 					<a href="{{$new->slug}}" class="@if( $key == 0 ) lg:col-span-2 @endif group" title="{{$new->title}} - {{ config('app.name') }}" >
 						<div >
-							<div class="h-96 overflow-hidden" style="background: url('{{asset('/storage/'.$new->cover)}}') no-repeat; background-size: cover; background-position: center; ">
+							<div class="h-64 overflow-hidden" style="background: url('{{asset('/storage/'.$new->cover)}}') no-repeat; background-size: cover; background-position: center; ">
 							</div>
 							<div class="py-10 group-hover:text-actionblue transition duration-300">
 								<div class="font-bold text-2xl line-clamp-2 h-16">
