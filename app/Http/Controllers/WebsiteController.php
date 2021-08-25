@@ -166,8 +166,8 @@ class WebsiteController extends Controller
                     ['email'=>request('email')],
                     request()->all()
                 );
+                return redirect()->route('newsletter')->with('success',['Pronto!','Cadastro realizado com sucesso']);
             }
-            return redirect()->route('newsletter')->with('success',['Pronto!','Cadastro realizado com sucesso']);
         }
 
         return redirect()->route('newsletter')->with('warning',['Hmmm, algo deu errado!','Verificou se o reCaptcha estava marcado?']);
