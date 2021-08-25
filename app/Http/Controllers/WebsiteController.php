@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\News;
+use App\Models\Health;
 use App\Models\Video;
 use App\Models\Boletim;
 use App\Models\Category;
@@ -22,22 +23,30 @@ class WebsiteController extends Controller
 
         $news       = \DB::table('news')->orderBy('created_at','desc')->get();
         $videos     = \DB::table('videos')->orderBy('created_at','desc')->get();
-        $boletims   = \DB::table('boletims')->orderBy('created_at','desc')->get();
+        $healths   = \DB::table('healths')->orderBy('created_at','desc')->get();
     	
         return view('index',[
             'news'=>$news,
             'videos'=>$videos,
-            'boletims'=>$boletims
+            'healths'=>$healths
         ]);
     }
 
     public function newsCategory($slug = null)
     {
 
+        $categories = \DB::table('categories')
+                        ->selectRaw('categories.name, count(category_id) as total, categories.slug, categories.type')
+                        ->join('category_news','categories.id','category_news.category_id')
+                        ->where('categories.type','news')
+                        ->groupBy('category_id')
+                        ->orderBy('name')
+                        ->get();
+
         $news = []; 
         if( $slug == null )
         {
-            $news = News::orderBy('date','DESC')->get();
+            $news = News::with('categories')->orderBy('date','DESC')->get();
             $category = null;
         }
         else
@@ -46,7 +55,33 @@ class WebsiteController extends Controller
             if( $category != null ) $news = $category->news;
         }
 
-        return view('news',['news'=>$news,'category'=>$category]);
+        return view('news',['news'=>$news,'category'=>$category,'categories'=>$categories]);
+    }
+
+    public function healthsCategory($slug = null)
+    {
+
+        $categories = \DB::table('categories')
+                        ->selectRaw('categories.name, count(category_id) as total, categories.slug, categories.type')
+                        ->join('category_news','categories.id','category_news.category_id')
+                        ->where('categories.type','news')
+                        ->groupBy('category_id')
+                        ->orderBy('name')
+                        ->get();
+
+        $news = []; 
+        if( $slug == null )
+        {
+            $news = Health::with('categories')->orderBy('date','DESC')->get();
+            $category = null;
+        }
+        else
+        {
+            $category = Category::where('slug',$slug)->first();
+            if( $category != null ) $news = $category->news;
+        }
+
+        return view('healths',['news'=>$news,'category'=>$category,'categories'=>$categories]);
     }
 
     public function news(News $news, $slug = null)
@@ -59,7 +94,7 @@ class WebsiteController extends Controller
         }
         else
         {
-            $news = News::all();
+            $news = News::with('categories')->all();
         }
 
 
@@ -70,9 +105,10 @@ class WebsiteController extends Controller
     {
 
         $videos = []; 
+
         if( $slug == null )
         {
-            $videos = Video::orderBy('date','DESC')->get();
+            $videos = \DB::table('videos')->orderBy('date','DESC')->get();
             $category = null;
         }
         else
@@ -80,6 +116,7 @@ class WebsiteController extends Controller
             $category = Category::where('type','video')->where('slug',$slug)->first();
             if( $category != null ) $videos = $category->videos;
         }
+
 
         return view('videos',['videos'=>$videos,'category'=>$category]);
     }
@@ -94,26 +131,13 @@ class WebsiteController extends Controller
         }
         else
         {
-            $videos = Video::all();
+            $videos = \DB::table('videos')->orderBy('date','DESC')->get();
         }
-
 
         return view('videos',['videos'=>$videos,'category'=>$category]);
     }
 
 
-    public function boletims()
-    {
-        $boletims = Boletim::orderBy('date','desc')->get();
-    	$last = Boletim::orderBy('created_at','desc')->first();
-        return view('boletims',['last'=>$last,'boletims'=>$boletims]);
-    }
-
-     public function boletim( Boletim $boletim)
-    {
-        $boletims = Boletim::orderBy('date','desc')->get();
-        return view('boletim',['boletim'=>$boletim,'boletims'=>$boletims]);
-    }
 
     public function register()
     {
@@ -151,23 +175,39 @@ class WebsiteController extends Controller
     {
 
         $reading = News::where('slug',$slug)->first();
-
         if( $reading != null )
         {
             $type = 'news';
-        }
-        else
-        {
-            $reading = Video::where('slug',$slug)->first();
-            $type = 'videos';
+            return view('reading',['reading'=>$reading,'type'=>$type]);
         }
 
-        return view('reading',['reading'=>$reading,'type'=>$type]);
+
+        $reading = Video::where('slug',$slug)->first();
+        if( $reading != null )
+        {
+            $type = 'videos';
+            return view('reading',['reading'=>$reading,'type'=>$type]);
+        }
+
+        $reading = Health::where('slug',$slug)->first();
+        if( $reading != null )
+        {
+            $type = 'healths';
+            return view('reading',['reading'=>$reading,'type'=>$type]);
+        }
+
+
+        return redirect('home');
+
+
     }
 
     public function newsPrint($slug)
     {
         $news = News::where('slug',$slug)->first();
+        if( $news == null ) $news = Health::where('slug',$slug)->first();
+        if( $news == null ) $news = Video::where('slug',$slug)->first();
+        if( $news == null ) abort( 404 );
 
         $data = ['news'=>$news];
 

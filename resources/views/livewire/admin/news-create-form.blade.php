@@ -1,5 +1,5 @@
 <div>
-	
+	Tipo: {{$type}}
 	<div class="row">
 	    <div class="col-md-12 py-4">
 	       <p class="py-4 bg-gray-100 px-3 d-flex justify-content-between" style="background: #efefef">

@@ -71,6 +71,7 @@ Route::get('sitemap',function(){
 
 Route::get('/',[App\Http\Controllers\WebsiteController::class,'index'])->name('home');
 Route::get('/noticias',[App\Http\Controllers\WebsiteController::class,'newsCategory'])->name('noticias');
+Route::get('/saude',[App\Http\Controllers\WebsiteController::class,'healthsCategory'])->name('saude');
 Route::get('/videos',[App\Http\Controllers\WebsiteController::class,'videos'])->name('videos');
 Route::get('/boletim-ac-saude',[App\Http\Controllers\WebsiteController::class,'boletims'])->name('boletims');
 Route::get('/cadastre-se',[App\Http\Controllers\WebsiteController::class,'register'])->name('cadastre');
@@ -95,6 +96,10 @@ Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->prefix('admin/'
         Route::get('call/',[App\Http\Controllers\CallController::class,'index'])->name('call');
 
     	// News 
+        Route::get('healths/',[App\Http\Controllers\HealthController::class,'index'])->name('healths');
+        Route::get('healths/create',[App\Http\Controllers\HealthController::class,'create'])->name('healths.create');
+        Route::get('healths/edit/{health}',[App\Http\Controllers\HealthController::class,'edit'])->name('healths.edit');
+
         Route::get('news/',[App\Http\Controllers\NewsController::class,'index'])->name('news');
         Route::get('news/edit/{new}',[App\Http\Controllers\NewsController::class,'edit'])->name('news.edit');
         Route::get('news/create/',[App\Http\Controllers\NewsController::class,'create'])->name('news.create');
@@ -133,6 +138,7 @@ Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->prefix('admin/'
 
 });
 
+Route::get('/#saude-{slug?}',[App\Http\Controllers\WebsiteController::class,'healthsCategory'])->name('healths.category');
 Route::get('/noticias-{slug?}',[App\Http\Controllers\WebsiteController::class,'newsCategory'])->name('news.category');
 Route::get('/print-{slug?}',[App\Http\Controllers\WebsiteController::class,'newsPrint'])->name('news.print');
 Route::get('/videos-{slug?}',[App\Http\Controllers\WebsiteController::class,'videosCategory'])->name('videos.category');

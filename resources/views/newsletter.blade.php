@@ -2,10 +2,12 @@
 
 @section('content')
 <div class="pt-8 max-w-6xl mx-auto px-8 lg:px-4">
-    <div class="text-4xl text-center">
-    	Newsletter
-		<div class="border-b-2 border-actionblue w-20 mx-auto"></div>
-    </div>	
+    <div class="mx-auto  px-8 mb-8 lg:px-0">
+		<div class=" max-w-6xl text-3xl font-semibold mb-2 text-left mx-auto">
+			Newsletter
+			<div class="w-40 h-1 bg-gradient-to-br from-actionblue to-red-700"></div>
+		</div>
+	</div>
     <div>
     	<p class="w-8/12 pt-10 pb-5 mx-auto text-gray-600 text-center">Cadastre-se para receber, toda semana, em seu e-mail, nossas notícias sobre os destaques do setor da saúde</p>
     </div>
@@ -13,9 +15,10 @@
 		<div class="bg-green-200 max-w-lg py-3 rounded font-bold mx-auto text-green-500 text-center "> CADASTRO EFETUADO COM SUCESSO! </div>
 	@endif
     <div>
+	    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<form action="{{ route('cadastre.store') }}" method="post" onsubmit="$('#submitButton').text('Enviando...')">
 			@csrf
-			{!! app('captcha')->display() !!}
+			<div class="g-recaptcha" data-sitekey="6Le8LSMcAAAAAOrkGe-VhjXBKFXIhWNn3H-L9NA_"></div>
 			<div class="w-6/12 mx-auto">
 				<div class="my-6">
 					<label for="" class="font-bold">Nome:</label>

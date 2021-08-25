@@ -22,6 +22,7 @@ class NewsCreateForm extends Component
 	public $newCategory;
     public $categoriesList;
 	public $manageCategories;
+    public $type;
 
 	protected $rules = [
 		'title'=>'required',
@@ -47,10 +48,11 @@ class NewsCreateForm extends Component
         'refreshCategoriesList'=>'refreshCategoriesList'
     ];
 
-	public function mount()
+	public function mount( $type = null )
 	{
 		$this->categoriesList = Category::where('type','like','news')->get();
         $this->date = date('Y-m-d');
+        $this->type = $type;
 	}
 
 	

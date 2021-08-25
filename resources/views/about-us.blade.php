@@ -2,10 +2,12 @@
 
 @section('content')
 <div class="pt-8 max-w-6xl mx-auto px-8 lg:px-4">
-    <div class="text-4xl  text-center">
-    	Quem Somos
-		<div class="border-b-2 border-actionblue w-20 mx-auto"></div>
-    </div>		
+    <div class="mx-auto  px-8 mb-8 lg:px-0">
+		<div class=" max-w-6xl text-3xl font-semibold mb-2 text-left mx-auto">
+			Quem Somos
+			<div class="w-40 h-1 bg-gradient-to-br from-actionblue to-red-700"></div>
+		</div>
+	</div>	
     
     <div class="text-gray-700 my-10">
         <div class="section-box">
@@ -22,10 +24,12 @@
 		</div>
 			
         <div class="section-box mt-20">
-		    <div class="text-4xl text-center mb-12">
-		    	Nossa Equipe
-				<div class="border-b-2 border-blue-600 w-20 mx-auto"></div>
-		    </div>	
+		    <div class="mx-auto  px-8 mb-8 lg:px-0">
+				<div class=" max-w-6xl text-3xl font-semibold mb-2 text-left mx-auto">
+					Nossa Equipe
+					<div class="w-40 h-1 bg-gradient-to-br from-actionblue to-red-700"></div>
+				</div>
+			</div>
 			<div class="grid sm:grid-cols-2  lg:grid-cols-3 gap-12">
 				<div class="wp-block-column">
 					<figure class="text-center">
@@ -63,15 +67,7 @@
 					</figure>
 					<p class="has-text-align-center text-gray-600">Gestor administrativo e financeiro. </p>
 				</div>
-				<div class="wp-block-column">
-					<figure class="text-center">
-						<div class="w-60 h-60 rounded-full overflow-hidden mx-auto">
-							<img loading="lazy" src="/img/lia-noleto.jpg" alt="Lia Noleto" >
-						</div>
-						<p class="font-bold pt-8 pb-3">Lia Noleto </p>
-					</figure>
-					<p class="has-text-align-center text-gray-600">Consultora jurídica. Mestranda em políticas públicas e governo.</p>
-				</div>
+				
 				<div class="wp-block-column">
 					<figure class="text-center">
 						<div class="w-60 h-60 rounded-full overflow-hidden mx-auto">
@@ -81,6 +77,22 @@
 					</figure>
 					<p class="has-text-align-center text-gray-600">Coordenadora de Comunicação. Especialista em política e representação parlamentar e comunicação e marketing político.</p>
 				</div>
+
+
+				<div class="wp-block-column">
+					<figure class="text-center">
+						<div class="w-60 h-60 rounded-full overflow-hidden mx-auto">
+							<img loading="lazy" src="/img/lennon-custodio.jpg" alt="Lennon Custódio" >
+						</div>
+						<p class="font-bold pt-8 pb-3">Lennon Custódio </p>
+					</figure>
+					<p class="has-text-align-center text-gray-600">
+						<!-- Relações Institucionais - Cientista Político, Administrador de Empresas, Economista e Especialista em Orçamento Público. Possui larga experiência como palestrante e na gestão de políticas públicas, com atuação de mais de 30 anos como assessor parlamentar na Câmara dos Deputados. -->
+						Cientista Político, Administrador de Empresas, Economista e Especialista em Orçamento Público.
+					</p>
+				</div>
+
+				
         	</div>
        	</div>
     </div>

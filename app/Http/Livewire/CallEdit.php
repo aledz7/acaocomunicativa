@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\News;
+use App\Models\Health;
 use App\Models\Video;
 use App\Models\Boletim;
 
@@ -30,10 +31,10 @@ class CallEdit extends Component
             $this->call = Video::where('call',1)->first();
             $this->typeName = 'Video';
         }
-        if( $this->type == 'boletim')
+        if( $this->type == 'health')
         {
-            $this->call = Boletim::where('call',1)->first();
-            $this->typeName = 'Boletim';
+            $this->call = Health::where('call',1)->first();
+            $this->typeName = 'Health';
         }
 	}
 
@@ -53,9 +54,9 @@ class CallEdit extends Component
     	{
     		$this->list = Video::where('title','like','%'.$this->search.'%')->get();
     	}
-    	if( $this->type == 'boletim')
+    	if( $this->type == 'health')
     	{
-    		$this->list = Boletim::where('title','like','%'.$this->search.'%')->get();
+    		$this->list = Health::where('title','like','%'.$this->search.'%')->get();
     	}
 
     	
@@ -81,10 +82,10 @@ class CallEdit extends Component
     		$newCall->save();
     	}
 
-    	if( $this->type == 'boletim')
+    	if( $this->type == 'health')
     	{
-    		Boletim::where('call',1)->update(['call'=>0]);
-    		$newCall = Boletim::find($call);
+    		Health::where('call',1)->update(['call'=>0]);
+    		$newCall = Health::find($call);
     		$newCall->call = 1;
     		$newCall->save();
     	}

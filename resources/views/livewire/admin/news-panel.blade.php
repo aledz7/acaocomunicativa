@@ -2,7 +2,7 @@
 	<div class="space-y-4">
 		<div class="mb-6 bg-white rounded px-3 py-3 text-right">
 	        <a href="{{route('admin.news.create')}}" class="bg-blue-600 px-3 py-1 rounded text-white">
-	            <button>Adicionar</button>
+	            <button>Adicionar {{$type}}</button>
 	        </a>
 		</div>
 		<div class="flex justify-between">

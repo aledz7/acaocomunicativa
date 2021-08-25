@@ -3,40 +3,48 @@
 @section('styles')
 <link rel="stylesheet" href="/css/socialshare.css">
 <link rel="stylesheet" href="/font/fontello/css/fontello.css">
+@endsection
 
+@section('title')
+	Notícias {{@$category->name}}
 @endsection
 
 @section('content')
-<div class="py-8 pb-40 max-w-6xl mx-auto px-8 lg:px-0">
+<div class="py-8 max-w-6xl mx-auto px-8 lg:px-0">
 	<div class="md:flex">
 		<div class="md:pr-10 flex-1">
 			<div class="mx-auto  px-8 mb-8 lg:px-0">
 				<div class=" max-w-6xl text-3xl font-semibold mb-2 text-left mx-auto">
-					Vídeos
+					#saúde
 					<div class="w-40 h-1 bg-gradient-to-br from-actionblue to-red-700"></div>
 				</div>
 			</div>
-			<div class="space-y-10">
-				@if( $videos ) 
-					@foreach($videos as $key => $video )
+			<div class="space-y-14">
+				@if( $news ) 
+					@foreach($news as $key => $news )
 						<div class="sm:flex ">
 							<div class="w-full h-52  overflow-hidden sm:w-4/12 sm:h-48" >
-								<img src="{{ asset('/storage/'.$video->cover) }}" alt="{{$video->slug}} - {{config('app.name')}}" title="{{$video->slug}} - {{config('app.name')}}" class="w-full">
+								<img src="{{ $news->coverImg }}" alt="{{$news->slug}} - {{config('app.name')}}" title="{{$news->title}} - {{config('app.name')}}" >
 							</div>
 							<div class="w-full pt-6 sm:pt-0 sm:w-8/12 sm:px-6 group flex flex-col justify-between">
-								<a href="{{route('reading',$video->slug)}}">
-									<p class="group-hover:text-actionblue transition duration-500 ease-in-out font-bolt text-xl text-black font-bold">{{$video->title}}</p>
-									<p class="group-hover:text-actionblue transition duration-500 ease-in-out text-sm text-gray-800 py-4">
-										{{$video->short_text}}
+								<a href="{{route('reading',$news->slug)}}">
+									<p>
+										@foreach( $news->categories as $category)
+											<span class="text-actionblue font-bold text-sm">{{$category->name}}</span>
+										@endforeach
 									</p>
+									<h2 class="group-hover:text-actionblue transition duration-500 ease-in-out font-bolt text-xl text-black font-bold">{{$news->title}}</h2>
+									<h3 class="group-hover:text-actionblue transition duration-500 ease-in-out text-sm text-gray-800 py-4">
+										{{$news->short_text}}
+									</h3>
 								</a>
 								<div x-data='{sendMail:false}' class="text-center sm:flex sm:items-center sm:justify-between p-2 rounded sm:space-x-4">
 									<div class="text-sm py-2 text-gray-700">
-										<span class="text-gray-400">{{ date('d/M/y', strtotime($video->date))}}</span> - <b class="text-black">{{config('app.name')}}</b>
+										<span class="text-gray-400">{{ date('d/M/y', strtotime($news->date))}}</span> - <b class="text-black">{{config('app.name')}}</b>
 									</div>
 									<div class="flex justify-center sm:justify-end mx-auto">
 										<a 
-											href="https://api.whatsapp.com/send?text={{ config('app.url')}}/{{$video->slug}}  - {{ config('app.name')}} - {{$video->title}}"
+											href="https://api.whatsapp.com/send?text={{ config('app.url')}}/{{$news->slug}}  - {{ config('app.name')}} - {{$news->title}}"
 											class="text-gray-700 mx-1 hover:text-green-700 cursor-pointer transition duration-300 ease-in-out" 
 											target="_blank" 
 											>
@@ -54,7 +62,7 @@
 										</a>
 
 
-										<a rel="https://www.linkedin.com/shareArticle?mini=true&url={{config('app.url')}}&title={{$video->title}}&summary=undefined&source=" 
+										<a rel="https://www.linkedin.com/shareArticle?mini=true&url={{config('app.url')}}&title={{$news->title}}&summary=undefined&source=" 
 											title="Share this page on Facebook" 
 											onclick='openPopUp($(this).attr("rel"), $(this).attr("title"))'
 											class="text-gray-700 mx-1 hover:text-blue-700 cursor-pointer transition duration-300 ease-in-out" 
@@ -64,7 +72,7 @@
 											</svg>
 										</a>
 										
-										<a rel="https://twitter.com/home?status={{config('app.url')}}%2F{{$video->slug}}" 
+										<a rel="https://twitter.com/home?status={{config('app.url')}}%2F{{$news->slug}}" 
 											title="Share this page on Facebook" 
 											onclick='openPopUp($(this).attr("rel"), $(this).attr("title"))'
 											class="text-gray-700 mx-1 hover:text-blue-700 cursor-pointer transition duration-300 ease-in-out" 
@@ -75,13 +83,15 @@
 											</svg>
 										</a>
 										<a 
-											href="/print-{{$video->slug}}"
+											href="/print-{{$news->slug}}"
 											class="text-gray-700 mx-1 hover:text-blue-700 cursor-pointer transition duration-300 ease-in-out" 
 											target="_blank" 
 											>
 											<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
 										</a>
-										@livewire('send-to-mail',['id'=>$video->id,'title'=>$video->title,'short_text'=>$video->short_text])
+
+										
+										@livewire('send-news-mail',['news'=>$news])
 									</div>
 								</div>
 							</div>
@@ -98,31 +108,18 @@
 		</div>
 	</div>
 </div>
+
 @endsection
 
 @section('scripts')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="/js/socialshare.js"></script>
 <script>
-	jQuery(function($) {
-	  var targets = ['Facebook', 'LinkedIn', 'Twitter', 'Google+'];
-	  $('.popup').BEShare({
-	    'class': 'popup-share',
-	    //'targets': 'Facebook,Twitter|Print,Email',
-	    'targets': targets,
-	    'via': 'BrandExtract'
-	  });
-
-	  $('.inline-share').BEShare({
-	    'type': 'inline',
-	    'targets': targets.concat(['|', 'Print', 'Email']),
-	    'via': 'BrandExtract',
-	    'altLink': true,
-	    'onShare': function(targetName) {
-	      ga('send', 'event', 'Social', 'Click', 'Share', targetName);
-	    }
-	  });
-	});
+		function openPopUp(url, title) {
+		    var w = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width,
+	  		h = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height,
+	      	left = (w / 2) - (400 / 2) +  10,
+	      	top  = (h / 2) - (400 / 2) +  50;
+		    window.open(url, title, "scrollbars=yes, width=" + 300 + ", height=" + 400 + ", top=" + top + ", left=" + left).focus();
+	  	}
 </script>
 
 

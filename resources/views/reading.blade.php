@@ -20,8 +20,8 @@
 				</div>
 
 				<div class=" justify-center">
-					@if( $type == 'news')
-						<img src="/storage/{{$reading->cover}}" alt="{{$reading->title}}" title="{{$reading->title}}" />
+					@if( $type == 'news' || $type == 'healths') 
+						<img src="/storage/{{$reading->cover}}" alt="{{$reading->title}}" title="{{$reading->title}}" class="mx-auto" />
 					@else
             			<iframe src="{{$reading->link}}" frameborder="0" width="100%" height="400"></iframe>
 					@endif

@@ -17,9 +17,7 @@ class NewsController extends Controller
 
     public function edit($id)
     {
-
         $new = News::withoutGlobalScope('published')->find($id);
-
     	return view('admin.news-edit',['new'=>$new]);
     }
 

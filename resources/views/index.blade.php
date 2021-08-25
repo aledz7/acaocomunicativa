@@ -5,6 +5,7 @@
 <div class="max-w-6xl mx-auto grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 py-10 owl-carousel">
 	
 	@if( $newsCall = $news->where('call',1)->first() )
+		<a href="/{{$newsCall->slug}}">
 		<div class="bg-black h-64 flex flex-col justify-between" style="background: url('{{asset('storage/'.$newsCall->cover)}}') no-repeat; background-size: cover ">
 			<div></div>
 			<div class="bg-actionblue rounded-bl  px-2 py-1 text-white font-bold absolute right-0 top-0 ">
@@ -22,11 +23,12 @@
 				</div>
 			</div>
 		</div>
+		</a>
 	@endif
 
 
-
 	@if( $newsVideo = $videos->where('call',1)->first() )
+		<a href="/{{$newsVideo->slug}}">
 		<div class="bg-black h-64 flex flex-col justify-between"  style="background: url('{{asset('storage/'.$newsVideo->cover)}}') no-repeat; background-size: cover ">
 			<div></div>
 			<div class="bg-actionblue rounded-bl  px-2 py-1 text-white font-bold absolute right-0 top-0 ">
@@ -43,10 +45,12 @@
 				</div>
 			</div>
 		</div>
+		</a>
 	@endif 
 	
-	@if( $newsBoletim = $boletims->where('call',1)->first() )
-		<div class="bg-black h-64 flex flex-col justify-between"  style="background: url('{{asset('storage/'.$newsBoletim->cover)}}') no-repeat; background-size: cover ">
+	@if( $newsHealth = $healths->where('call',1)->first() )
+		<a href="/{{$newsHealth->slug}}">
+		<div class="bg-black h-64 flex flex-col justify-between"  style="background: url('{{asset('storage/'.$newsHealth->cover)}}') no-repeat; background-size: cover ">
 			<div></div>
 			<div class="bg-actionblue rounded-bl  px-2 py-1 text-white font-bold absolute right-0 top-0 ">
 				#saude
@@ -55,13 +59,14 @@
 				
 				<div class="bg-black bg-opacity-50 text-white py-4 borer-l border-green-500 px-6 relative">
 					<div class="flex justify-between">
-						<div class="font-bold truncate">{{ $newsBoletim->title}}</div>
-						<div class="text-xs">{{ date('d/M/y',strtotime($newsBoletim->date))}}</div>
+						<div class="font-bold truncate">{{ $newsHealth->title}}</div>
+						<div class="text-xs">{{ date('d/M/y',strtotime($newsHealth->date))}}</div>
 					</div>
-					<div class="text-sm line-clamp-2 h-10">{{ substr( $newsBoletim->short_text , 0 , 100 ) }}</div>
+					<div class="text-sm line-clamp-2 h-10">{{ substr( $newsHealth->short_text , 0 , 100 ) }}</div>
 				</div>
 			</div>
 		</div>
+		</a>
 	@endif
 
 
@@ -195,45 +200,6 @@
 </div>
 
 
-
-<div class="bg-gray-100 my-20 h-14 shadow-inner w-full hidden"></div>
-
-<div class="pt-8 max-w-6xl mx-auto  px-8 lg:px-0 hidden">
-	<div>
-		<div>
-			<div class="text-2xl font-bold mb-10">
-				Boletim
-				<div class="border-b-2 border-actionblue w-20"></div>
-			</div>
-			<div class="grid lg:grid-cols-3  md:grid-cols-2 xs:grid-cols-1 gap-10">
-				@foreach( $boletims->take(3) as $boletim )
-					<div>
-						<a href='/boletim-ac-saude-{{$boletim->id}}'> 	
-							<div>
-								@if( $boletim->cover )
-					    			<img src="{{asset('/storage/'.$boletim->cover)}}" alt="" class="mx-auto"> 
-					    		@else
-					    			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAHlBMVEX09PTh4eH19fXg4ODk5OTw8PDs7Ozq6uru7u7n5+dZKxXMAAAELUlEQVR4nO2dWXKtMAwFwQMX9r/hB9RNMOARhCTyTv/kIxVQl4kHYZmuAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgAsZ03o9eA6OfwyH360bXWz30kyd2HHvbq8LaibQdJ2V+C7Yf6RSdQsEZOxApGqWCsyJNK5qPVsEZCsHOS1tksBNFI2rsZTY8gaG0QxaCRjRj0ITS4/wvW0judguaKbjaID1f+xLEZG8/psZtV6OeKF3GbH2DHW9fbDN0WgTn/j0wvBtVYEjSM9MAwxZgKAMMW4ChDLyGxoQ/eGA0NMYPk3O9c9PH80nyGZo1A/e9l3WEiZM8DxmeZm3GH/Ib1jFNXZna0AzntTFZcigPj2E8f2M/HIoshqkEFYsih+Fu7b9XZOhvWNow4bdw85YVMBjmkqg0Kb4sHG2YaUKaFF+W5w3zefDnO5vnR/wwPxXh8YwOw1Oaz4Pbmzct8ryhLxhe+EdsivRxw/RgePW2821a/uZ5w8ILt/auZp7Ct8Qqb9g6/17XKA3BKnhK227yswirjvZtPc22yqwN912jxW6bQGW87xrx93mCuoBfNWs7JkKqIuaYeWcf04brn3ey1ITMsXrK7F9oWD1Ft+pUxPyeFXB8L1I5aJYsRnKbTcM9E5utyleQzUTVz2eSu8mKYb8km5jbLleI+xUZ4cJ+wHzgr8jqFzY85iNnfPe0vJn5uVff8mamuKMzGzrn27Xu9+3a4Bu2JddsWc3Erv4NaeWe3HTw6t9yV246Tkev3bB6V3UyfOWGDdvGU/HrNmzbFx8X0GzYvPE/asA14l+hubIhqqC4DS+UbsQc9Bpeq005S2g1vFx8c7LQani5uuikIWhohnR5wI3yqaOHnOG8ZLQpxVv1YYd1p5jhuiZOKN4sgNsrShl+F/0xxfsVfjtFoRE/yGqcfkdQwhgqyrRhmLY5tiJJjWbwvkfEcJeXOjyoNEWoVrYND4m3UJGqyla2DU+ZxUCRqoxY1DCWOv3pbsjqpCUNo4LfVqQrBBc0jAquioaylF/OMCG4KlKW8j9vmBjxk4LUSLUhm6CUIZ+gkCGjoIwhp6CIIaughCGvoIAhsyC/Ibcg+4jPLsjdhvyCzIYCgryGEoK8hoV93u83lDn+i9VQ4iGFIQwrDN2fN/z7bQhDGMIQhjCEYdnwvxrxPyKnljIadn6QgNOwMxKwGgoDwxZgKAMMW4ChDE/N2kiCoyA4eYTgPO/t/PPluyc6COrICc5kDybZ1jodhPP+u4LFg1qkofjXyR9jIgzFaaKl84Rkoen9FDci1Tmb0h5JqM6gNFo7m2R5zgVFbd8kW5nHZzJOx0MowNqhHHiL4+h2H7ARZvl4HvUHAtfD1yfpycyX6TPSfwCxE8o+JXhADwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAs/ANyGFT0fw3sTAAAAABJRU5ErkJggg==" alt="" class="mx-auto"> 
-					    		@endif
-							</div>
-							<div class="px-6 py-10">
-								<p>
-								</p>
-								<p class="font-bold text-lg ">{{$boletim->title}}</p>
-								<p class="text-sm text-gray-500">
-									{{$boletim->short_text}}
-								</p>
-								<div class="text-sm py-2 text-gray-500">
-									{{ date('d/M/y',strtotime($boletim->date))}} - <b class='text-black'>{{config('app.name')}}</b>
-								</div>
-							</div>
-						</a>
-					</div>
-				@endforeach
-			</div>
-		</div>
-	</div>
-</div>
 
 
 

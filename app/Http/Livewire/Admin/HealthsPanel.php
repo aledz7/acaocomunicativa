@@ -5,23 +5,23 @@ namespace App\Http\Livewire\Admin;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-use App\Models\News;
+use App\Models\Health;
 use App\Models\Newsletter;
 use App\Mail\SendNews;
 use Mail;
 
-class NewsPanel extends Component
+class HealthsPanel extends Component
 {
 
-	use WithPagination;
+    use WithPagination;
 
     public $search;
     public $send_to = [];
-	public $countSendTo;
+    public $countSendTo;
     public $newsLetterList;
 
-	public $sortDirection = 'desc';
-	public $sortField = 'date';
+    public $sortDirection = 'desc';
+    public $sortField = 'date';
 
     public $type;
 
@@ -32,8 +32,8 @@ class NewsPanel extends Component
 
     public function render()
     {
-        return view('livewire.admin.news-panel',[
-        	'news'=>News::where('title','like','%'.$this->search.'%')
+        return view('livewire.admin.healths-panel',[
+            'healths'=>Health::where('title','like','%'.$this->search.'%')
                 ->when( $this->type , function($q) {
                     $q->where('type',$this->type);
                 })
@@ -58,15 +58,15 @@ class NewsPanel extends Component
 
     public function sendTo($id)
     {
-        $news = News::find($id);
+        $health = Health::find($id);
         $emails = Newsletter::whereIn('profession',$this->send_to)->pluck('email')->toArray();
-        Mail::send( new SendNews($news,$emails,'news') );
+        Mail::send( new SendNews($health,$emails,'news') );
 
     }
 
 
     public function removeAll()
     {
-        News::truncate();
+        Health::truncate();
     }
 }

@@ -42,14 +42,15 @@
                     <div class="mx-auto max-w-6xl text-white text-sm flex justify-between flex-col sm:flex-row">
                         <div class="sm:text-left">
                             <div class="pr-4 sm:flex">
-                                <div class="font-semibold">Verba Saúde: </div>
+                                <div class="font-semibold mr-2">Verba Saúde: </div>
                                 <div>Cidade de São Paulo recebeu R$ 1.453.234,00 em verbas públicas</div>
                             </div>
                         </div>
                         <div class="text-center sm:flex sm:space-x-3">
                             <div class="flex">
-                                <div class="px-3 border-r border-l"> Login </div>
-                                <div class="px-3 border-r"> Assinar </div>
+                                <i>Em breve acesso liberado</i>
+                                <!-- <div class="px-3 border-r border-l"> Login </div>
+                                <div class="px-3 border-r"> Assinar </div> -->
                             </div>
                         </div>
                     </div>
@@ -75,11 +76,11 @@
                                         <a href="{{route('videos')}}" title='Vídeos - {{config("app.name") }}'>Vídeos</a>
                                     </li>
                                     <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                        <a href="{{route('videos')}}" title='Vídeos - {{config("app.name") }}'>#Saude</a>
+                                        <a href="{{route('saude')}}" title='#saúde - {{config("app.name") }}'>#Saude</a>
                                     </li>
-                                    <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                    <!-- <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                         <a href="{{route('boletims')}}" title='Verbas da Saúde - {{config("app.name") }}'>Verbas da Saúde</a>
-                                    </li>
+                                    </li> -->
                                     <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                         <a href="{{route('newsletter')}}" title='Newsletter - {{config("app.name") }}'>Newsletter</a>
                                     </li>
@@ -91,8 +92,8 @@
                             <nav class="flex flex-col justify-end relative overflow-hidden w-0 h-0 xs:w-full xs:h-auto max-w-6xl mx-auto text-sm">
                                 <ul>
                                     <div class="space-x-3 text-black mx-auto flex justify-end py-2">
-                                        <i class="fab fa-facebook-f"></i>
-                                        <i class="fab fa-instagram"></i>
+                                        <a href="https://www.facebook.com/acaocomunicativasaude"><i class="fab fa-facebook-f"></i></a>
+                                        <a href='https://www.instagram.com/acaocomunicativasaude/'><i class="fab fa-instagram"></i></a>
                                         <i class="fab fa-youtube"></i>
                                         <i class="fab fa-twitter"></i>
                                     </div>
@@ -108,11 +109,11 @@
                                            <a href="{{route('videos')}}" title='Vídeos - {{ config("app.name") }}'>Vídeos</a>
                                        </li>
                                        <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                           <a href="{{route('videos')}}" title='Vídeos - {{ config("app.name") }}'>#Saude</a>
+                                           <a href="{{route('saude')}}" title='Vídeos - {{ config("app.name") }}'>#Saude</a>
                                        </li>
-                                    <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                        <!-- <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                            <a href="{{route('boletims')}}" title='Verbas da Saúde - {{ config("app.name") }}'>Verbas da Saúde</a>
-                                       </li>
+                                       </li> -->
                                     <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                            <a href="{{route('newsletter')}}" title='Newsletter - {{ config("app.name") }}'>Newsletter</a>
                                        </li>
@@ -127,7 +128,6 @@
         	</header>
                 
             @yield('content')
-
             <section class="mt-32">
                 <div class="max-w-6xl  bg-actionblue mx-auto -mb-10 relative shadow-xl text-white bg-bottom sm:bg-center "  style="background: url('{{asset('/img/bg-verbas-da-saude.jpg')}}') no-repeat; background-size: cover ;">
                     <div class="text-center md:flex md:text-left bg-black p-10 bg-opacity-60">
@@ -137,7 +137,7 @@
                         </div>
                         <div class="m-10 md:m-0 text-center px-6" >
                             <button class="border border-white px-3 py-2 hover:bg-white hover:text-actionblue">
-                                Acessar
+                                Em Breve
                             </button>
                         </div>
                     </div>
@@ -178,11 +178,11 @@
                                 <a href="{{route('videos')}}" title='Vídeos - {{ config("app.name") }}'>Vídeos</a>
                             </li>
                             <li class="px-3  text-white">
-                                <a href="{{route('videos')}}" title='Vídeos - {{ config("app.name") }}'>#saude</a>
+                                <a href="{{route('saude')}}" title='#saúde - {{ config("app.name") }}'>#saude</a>
                             </li>
-                            <li class="px-3  text-white">
+                            <!-- <li class="px-3  text-white">
                                 <a href="{{route('boletims')}}" title='Verbas da Saúde - {{ config("app.name") }}'>Verbas da Saúde</a>
-                            </li>
+                            </li> -->
                             <li class="px-3  text-white">
                                 <a href="{{route('newsletter')}}" title='Newsletter - {{ config("app.name") }}'>Newsletter</a>
                             </li>
@@ -193,8 +193,8 @@
                     </nav>
                 </div>
                 <div class="space-x-3 mx-auto text-white flex justify-center pb-10">
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-instagram"></i>
+                    <a href="https://www.facebook.com/acaocomunicativasaude"><i class="fab fa-facebook-f"></i></a>
+                    <a href='https://www.instagram.com/acaocomunicativasaude/'><i class="fab fa-instagram"></i></a>
                     <i class="fab fa-youtube"></i>
                     <i class="fab fa-twitter"></i>
                 </div>

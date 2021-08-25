@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="space-y-5">
-                @livewire('admin.news-panel')
+                @livewire('admin.news-panel',['type'=>$type??null])
             </div>
         </div>
     </div>
