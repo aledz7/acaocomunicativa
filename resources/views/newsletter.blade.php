@@ -14,11 +14,13 @@
 	@if( session('success') )
 		<div class="bg-green-200 max-w-lg py-3 rounded font-bold mx-auto text-green-500 text-center "> CADASTRO EFETUADO COM SUCESSO! </div>
 	@endif
+	@if( session('warning') )
+		<div class="bg-yellow-200 max-w-lg py-3 rounded font-bold mx-auto text-yellow-500 text-center "> Hmmm, algo deu errado... Verificou se o reCAPTCHA estava marcado? </div>
+	@endif
     <div>
 	    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<form action="{{ route('cadastre.store') }}" method="post" onsubmit="$('#submitButton').text('Enviando...')">
 			@csrf
-			<div class="g-recaptcha" data-sitekey="6Le8LSMcAAAAAOrkGe-VhjXBKFXIhWNn3H-L9NA_"></div>
 			<div class="w-6/12 mx-auto">
 				<div class="my-6">
 					<label for="" class="font-bold">Nome:</label>
@@ -40,10 +42,19 @@
 						<option>Outros</option>
 					</select>
 				</div>
-				<div class="text-right py-4">
-					<button id='submitButton' class="bg-blue-600 px-2 text-white rounded py-1">
-						Cadastrar
-					</button>
+				<div class="py-4 text-center">
+					<div class="g-recaptcha flex justify-around" data-callback='verified' data-sitekey="6Le8LSMcAAAAAOrkGe-VhjXBKFXIhWNn3H-L9NA_"></div>
+					<script>
+						function verified()
+						{
+							$('#submitButton').show();
+						}
+					</script>
+					<div>
+						<button id='submitButton' class="bg-blue-600 px-2 text-white rounded py-1 hidden mt-6">
+							Cadastrar
+						</button>
+					</div>
 				</div>
 			</div>
 		</form>

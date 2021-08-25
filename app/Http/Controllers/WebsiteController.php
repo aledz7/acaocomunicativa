@@ -151,12 +151,29 @@ class WebsiteController extends Controller
 
     public function registerStore()
     {
-        $newsletter = Newsletter::updateOrCreate(
-            ['email'=>request('email')],
-            request()->all()
-        );
 
-        return redirect()->route('newsletter')->with('success',['Pronto!','Cadastro realizado com sucesso']);
+        
+        if( request('g-recaptcha-response') )
+        {
+
+            $playload = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".config('captcha.secret')."&response=".request('g-recaptcha-response'));
+
+            $result = json_decode($playload);
+
+            if( $result->success == true )
+            {
+                $newsletter = Newsletter::updateOrCreate(
+                    ['email'=>request('email')],
+                    request()->all()
+                );
+            }
+            return redirect()->route('newsletter')->with('success',['Pronto!','Cadastro realizado com sucesso']);
+        }
+
+        return redirect()->route('newsletter')->with('warning',['Hmmm, algo deu errado!','Verificou se o reCaptcha estava marcado?']);
+
+
+
     }
 
     public function aboutUs()
