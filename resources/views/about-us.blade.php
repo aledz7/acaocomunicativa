@@ -61,7 +61,7 @@
 				<div class="wp-block-column">
 					<figure class="text-center">
 						<div class="w-60 h-60 rounded-full overflow-hidden mx-auto">
-							<img loading="lazy" src="/img/joaquim-nogale.jpg" alt="Paulo Vasconcelos" >
+							<img loading="lazy" src="/img/paulo-vasconcelos.jpg" alt="Paulo Vasconcelos" >
 						</div>
 						<p class="font-bold pt-8 pb-3">Paulo Vasconcelos</p>
 					</figure>

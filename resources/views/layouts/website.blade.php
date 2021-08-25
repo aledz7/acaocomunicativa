@@ -42,13 +42,13 @@
                     <div class="mx-auto max-w-6xl text-white text-sm flex justify-between flex-col sm:flex-row">
                         <div class="sm:text-left">
                             <div class="pr-4 sm:flex">
-                                <div class="font-semibold mr-2">Verba Saúde: </div>
-                                <div>Cidade de São Paulo recebeu R$ 1.453.234,00 em verbas públicas</div>
+                                <div class="font-semibold mr-2">Verbas da Saúde: </div>
+                                <div>Rastreamento das destinações das verbas públicas para a saúde</div>
                             </div>
                         </div>
                         <div class="text-center sm:flex sm:space-x-3">
                             <div class="flex">
-                                <i>Em breve acesso liberado</i>
+                                <i>Em breve</i>
                                 <!-- <div class="px-3 border-r border-l"> Login </div>
                                 <div class="px-3 border-r"> Assinar </div> -->
                             </div>
@@ -94,8 +94,8 @@
                                     <div class="space-x-3 text-black mx-auto flex justify-end py-2">
                                         <a href="https://www.facebook.com/acaocomunicativasaude"><i class="fab fa-facebook-f"></i></a>
                                         <a href='https://www.instagram.com/acaocomunicativasaude/'><i class="fab fa-instagram"></i></a>
-                                        <i class="fab fa-youtube"></i>
-                                        <i class="fab fa-twitter"></i>
+                                        <a href="https://www.youtube.com/channel/UCPYHmPHs5-Zltu7mVtlqH0A"><i class="fab fa-youtube"></i></a>
+                                        <!-- <i class="fab fa-twitter"></i> -->
                                     </div>
                                 </ul>
                                 <ul class="flex flex-1 uppercase items-center font-bold  w-full">
@@ -195,8 +195,8 @@
                 <div class="space-x-3 mx-auto text-white flex justify-center pb-10">
                     <a href="https://www.facebook.com/acaocomunicativasaude"><i class="fab fa-facebook-f"></i></a>
                     <a href='https://www.instagram.com/acaocomunicativasaude/'><i class="fab fa-instagram"></i></a>
-                    <i class="fab fa-youtube"></i>
-                    <i class="fab fa-twitter"></i>
+                    <a href="https://www.youtube.com/channel/UCPYHmPHs5-Zltu7mVtlqH0A"><i class="fab fa-youtube"></i></a>
+                    <!-- <i class="fab fa-twitter"></i> -->
                 </div>
     			<div class="text-white border-t border-gray-200 border-opacity-10 p-5  flex justify-center text-xs bg-black bg-opacity-30">
     				Copyright - {{ config('app.name') }} - {{ date('Y') }}

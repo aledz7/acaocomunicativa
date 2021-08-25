@@ -41,18 +41,7 @@
 		</div>
 		
 		<div class="pt-10  sm:w-3/12 md:pt-0 mb-40 text-center sm:text-left">
-			<p class="text-2xl">Categorias</p>
-			<div class="divide divide-y divide-gray-200">
-				@foreach( App\Models\Category::whereHas("$type")->get() as $category)
-					<a href="{{ route($type.'.category', ['slug'=>$category->slug]) }}" class="py-2 px-1 hover:bg-gray-100 hover:text-blue-700 cursor-pointer w-full block">
-						{{$category->name}} ({{$category->$type->count()}})
-					</a>
-				@endforeach
-			</div>
-			@if( $type == 'new')
-				@include('block-newsletter')
-			@endif
-			@include('block-news',['type'=>$type])
+			@include('side-bar')
 
 		</div>
 		
