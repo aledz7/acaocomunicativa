@@ -18,7 +18,7 @@
 				<div class="hover:bg-gray-50 py-4  border-b border-dashed border-gray-300 group">
 					<a href="{{$newsBlock->slug}}" class="flex"> 	
 						<div>
-							<img src="{{$newsBlock->cover}}" alt="" class="w-14">
+							<img src="{{\Storage::url($newsBlock->cover)}}" alt="" class="w-14">
 						</div>
 						<div class="flex-1 text-sm px-2">
 							<p class="font-bold group-hover:text-actionblue transition line-clamp-2">{{$newsBlock->title}}</p>
@@ -31,7 +31,7 @@
 				<div class="hover:bg-gray-50 py-4  border-b border-dashed border-gray-300 group">
 					<a href="{{$newsBlock->slug}}" class="flex"> 	
 						<div>
-							<img src="{{$newsBlock->cover}}" alt="" class="w-14">
+							<img src="{{\Storage::url($newsBlock->cover)}}" alt="" class="w-14">
 						</div>
 						<div class="flex-1 text-sm px-2">
 							<p class="font-bold group-hover:text-actionblue transition line-clamp-2">{{$newsBlock->title}}</p>
@@ -44,7 +44,7 @@
 				<div class="hover:bg-gray-50 py-4  border-b border-dashed border-gray-300 group">
 					<a href="{{$newsBlock->slug}}" class="flex"> 	
 						<div>
-							<img src="{{$newsBlock->cover}}" alt="" class="w-14">
+							<img src="{{\Storage::url($newsBlock->cover)}}" alt="" class="w-14">
 						</div>
 						<div class="flex-1 text-sm px-2">
 							<p class="font-bold group-hover:text-actionblue transition line-clamp-2">{{$newsBlock->title}}</p>
