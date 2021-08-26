@@ -132,7 +132,7 @@
                 
             @yield('content')
             <section class="mt-32">
-                <div class="max-w-6xl   mx-auto -mb-10 relative shadow-xl text-white bg-bottom sm:bg-center "  style="background: url('{{asset('/img/bg-verbas-da-saude.jpg')}}') no-repeat; background-size: cover ;">
+                <div class="max-w-6xl   mx-auto -mb-10 relative shadow-xl text-white bg-bottom sm:bg-center "  style="background: url('{{asset('/img/bg-banner-verbas-da-saude.jpg')}}') no-repeat; background-size: cover ;">
                     <div class="text-center md:flex md:text-left  p-10  items-center">
                         <div class="flex-1">
                             <div class="text-xl font-semibold">
