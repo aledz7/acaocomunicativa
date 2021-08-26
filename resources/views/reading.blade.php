@@ -40,7 +40,7 @@
 			</div>
 		</div>
 		
-		<div class="pt-10  sm:w-3/12 md:pt-0 mb-40 text-center sm:text-left">
+		<div class="pt-10  sm:w-3/12 md:pt-0 mb-40">
 			@include('side-bar')
 
 		</div>
