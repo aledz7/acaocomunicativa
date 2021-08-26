@@ -22,7 +22,7 @@
 							<img src="{{\Storage::url($newsBlock->cover)}}" alt="" class="w-14">
 						</div>
 						<div class="flex-1 text-sm px-2">
-							<p class="font-bold group-hover:text-actionblue transition line-clamp-2">{{$newsBlock->title}}</p>
+							<p class="font-bold -mt-1 group-hover:text-actionblue transition line-clamp-2">{{$newsBlock->title}}</p>
 							<div class="text-xs text-right italic text-gray-700">{{ date('d/M/y', strtotime($newsBlock->date) ) }}</div>
 						</div>
 					</a>
@@ -35,7 +35,7 @@
 							<img src="{{\Storage::url($newsBlock->cover)}}" alt="" class="w-14">
 						</div>
 						<div class="flex-1 text-sm px-2">
-							<p class="font-bold group-hover:text-actionblue transition line-clamp-2">{{$newsBlock->title}}</p>
+							<p class="font-bold -mt-1 group-hover:text-actionblue transition line-clamp-2">{{$newsBlock->title}}</p>
 							<div class="text-xs text-right italic text-gray-700">{{ date('d/M/y', strtotime($newsBlock->date) ) }}</div>
 						</div>
 					</a>
@@ -48,7 +48,7 @@
 							<img src="{{\Storage::url($newsBlock->cover)}}" alt="" class="w-14">
 						</div>
 						<div class="flex-1 text-sm px-2">
-							<p class="font-bold group-hover:text-actionblue transition line-clamp-2">{{$newsBlock->title}}</p>
+							<p class="font-bold -mt-1 group-hover:text-actionblue transition line-clamp-2">{{$newsBlock->title}}</p>
 							<div class="text-xs text-right italic text-gray-700">{{ date('d/M/y', strtotime($newsBlock->date) ) }}</div>
 						</div>
 					</a>
