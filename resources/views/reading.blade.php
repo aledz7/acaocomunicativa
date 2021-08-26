@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-<div class="pt-8 max-w-6xl mx-auto px-8 lg:px-0">
+<div class="pt-8 max-w-6xl mx-auto px-2 sm:px-8 lg:px-0">
 	<div class="md:flex">
 		
 		<div class="flex-1">
