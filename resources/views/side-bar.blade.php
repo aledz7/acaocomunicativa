@@ -14,7 +14,7 @@
 	<div>
 		<div>Últimas Notícias</div>
 		<div>
-			@foreach( \DB::table('news')->get()->take(3) as $newsBlock )
+			@foreach( \DB::table('news')->orderBy('created_at','desc')->get()->take(3) as $newsBlock )
 				<div class="hover:bg-gray-50 py-4  border-b border-dashed border-gray-300 group">
 					<a href="{{$newsBlock->slug}}" class="flex"> 	
 						<div>
@@ -27,7 +27,7 @@
 					</a>
 				</div>
 			@endforeach
-			@foreach( \DB::table('videos')->get()->take(3) as $newsBlock )
+			@foreach( \DB::table('videos')->orderBy('created_at','desc')->get()->take(3) as $newsBlock )
 				<div class="hover:bg-gray-50 py-4  border-b border-dashed border-gray-300 group">
 					<a href="{{$newsBlock->slug}}" class="flex"> 	
 						<div>
@@ -40,7 +40,7 @@
 					</a>
 				</div>
 			@endforeach
-			@foreach( \DB::table('healths')->get()->take(3) as $newsBlock )
+			@foreach( \DB::table('healths')->orderBy('created_at','desc')->get()->take(3) as $newsBlock )
 				<div class="hover:bg-gray-50 py-4  border-b border-dashed border-gray-300 group">
 					<a href="{{$newsBlock->slug}}" class="flex"> 	
 						<div>
