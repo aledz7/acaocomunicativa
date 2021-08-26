@@ -3,9 +3,9 @@
 @section('content')
 <div class="pt-8 max-w-6xl mx-auto px-8 lg:px-4">
     <div class="mx-auto  px-8 mb-8 lg:px-0">
-		<div class=" max-w-6xl text-3xl font-semibold mb-2 text-left mx-auto">
+		<div class=" max-w-6xl text-3xl font-semibold mb-2 text-center sm:text-left mx-auto">
 			Newsletter
-			<div class="w-40 h-1 bg-gradient-to-br from-actionblue to-red-700"></div>
+			<div class="mx-auto sm:ml-0 w-40 h-1 bg-gradient-to-br from-actionblue to-red-700"></div>
 		</div>
 	</div>
     <div>
