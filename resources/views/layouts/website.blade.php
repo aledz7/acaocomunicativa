@@ -132,15 +132,17 @@
                 
             @yield('content')
             <section class="mt-32">
-                <div class="max-w-6xl  bg-actionblue mx-auto -mb-10 relative shadow-xl text-white bg-bottom sm:bg-center "  style="background: url('{{asset('/img/bg-verbas-da-saude.jpg')}}') no-repeat; background-size: cover ;">
-                    <div class="text-center md:flex md:text-left bg-black p-10 bg-opacity-60">
+                <div class="max-w-6xl   mx-auto -mb-10 relative shadow-xl text-white bg-bottom sm:bg-center "  style="background: url('{{asset('/img/bg-verbas-da-saude.jpg')}}') no-repeat; background-size: cover ;">
+                    <div class="text-center md:flex md:text-left  p-10  items-center">
                         <div class="flex-1">
-                            <div class="text-xl font-semibold">Verbas da Saúde</div>
-                            <div class="text-sm">Plataforma para acompanhar as destinações de verbas da saúde para os municípios</div>
+                            <div class="text-xl font-semibold">
+                                <img src="/img/logo-vds.png" alt="" class="w-80">
+                            </div>
                         </div>
-                        <div class="m-10 md:m-0 text-center px-6" >
-                            <button class="border border-white px-3 py-2 hover:bg-white hover:text-actionblue">
-                                Em Breve
+                        <div class="m-4 text-sm">Plataforma para acompanhar as destinações das verbas públicas para a saúde</div>
+                        <div class="m-4 sm:m-10 md:m-0 text-center px-6" >
+                            <button class=" px-3 py-2 hover:bg-white hover:text-actionblue">
+                                Em Breve!
                             </button>
                         </div>
                     </div>
