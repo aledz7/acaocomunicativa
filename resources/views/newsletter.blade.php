@@ -9,7 +9,7 @@
 		</div>
 	</div>
     <div>
-    	<p class="w-8/12 pt-10 pb-5 mx-auto text-gray-600 text-center">Cadastre-se para receber, toda semana, em seu e-mail, nossas notícias sobre os destaques do setor da saúde</p>
+    	<p class="sm:w-8/12 sm:pt-10 pb-5 mx-auto text-gray-600 text-center">Cadastre-se para receber, toda semana, em seu e-mail, nossas notícias sobre os destaques do setor da saúde</p>
     </div>
 	@if( session('success') )
 		<div class="bg-green-200 max-w-lg py-3 rounded font-bold mx-auto text-green-500 text-center "> CADASTRO EFETUADO COM SUCESSO! </div>
@@ -21,7 +21,7 @@
 	    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<form action="{{ route('cadastre.store') }}" method="post" onsubmit="$('#submitButton').text('Enviando...')">
 			@csrf
-			<div class="w-6/12 mx-auto">
+			<div class="sm:w-6/12 mx-auto">
 				<div class="my-6">
 					<label for="" class="font-bold">Nome:</label>
 					<input type="text" name="name" class="w-full" required="required" placeholder="Nome Completo">

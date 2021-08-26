@@ -93,7 +93,7 @@
 				@endif
 			</div>
 		</div>
-		<div class="pt-10 w-56 md:pt-0">
+		<div class="pt-10 sm:w-56 md:pt-0">
 			@include('side-bar')
 		</div>
 	</div>

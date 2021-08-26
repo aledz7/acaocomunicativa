@@ -33,7 +33,7 @@
         	<header class="sticky top-0 bg-white z-10">
                 @if( auth()->user() )
                     <div class="bg-gray-700 text-white py-1">
-                        <div class="max-w-6xl mx-auto text-right text-sm">
+                        <div class="max-w-6xl mx-auto text-center sm:text-right sm:mr-4 text-sm">
                             {{auth()->user()->name }} 
                             @if( auth()->user()->role_id == 0 ) - <a href='{{route("admin.dashboard")}}'>Painel Administrativo</a>  @endif -
                             <a href='#' onclick="$(this).next().submit()"> Sair </a>
@@ -42,11 +42,11 @@
                     </div>
                 @endif
                 <div class="bg-actionblue text-white py-3">
-                    <div class="mx-auto max-w-6xl text-white text-sm flex justify-between flex-col sm:flex-row">
+                    <div class="mx-auto max-w-6xl text-white text-sm flex justify-between px-4">
                         <div class="sm:text-left">
-                            <div class="pr-4 sm:flex">
-                                <div class="font-semibold mr-2">Verbas da Saúde: </div>
-                                <div>Rastreamento das destinações das verbas públicas para a saúde</div>
+                            <div class="sm:flex">
+                                <div class="font-semibold mr-2">Verbas da Saúde </div>
+                                <div class="hidden sm:block">Rastreamento das destinações das verbas públicas para a saúde</div>
                             </div>
                         </div>
                         <div class="text-center sm:flex sm:space-x-3">
@@ -60,7 +60,7 @@
                 </div>
                 <div class="border-b-2">
             		<div class="flex justify-between items-center py-2 mx-auto max-w-6xl ">
-            			<div class="text-2xl">
+            			<div class="text-2xl pl-4">
             				<img src="{{ asset('img/logo-acao-comunicativa.png') }}" alt="" class="w-100 " style="width: 150px">
             			</div>
             			<div>
