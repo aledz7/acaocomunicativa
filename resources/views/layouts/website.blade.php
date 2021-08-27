@@ -67,7 +67,7 @@
             		<div class="flex justify-between items-center py-2 mx-auto max-w-6xl ">
             			<div class="text-2xl pl-4 sm:pl-0">
                             <a href="{{ config('app.url') }}">
-            				    <img src="{{ asset('img/logo-acao-comunicativa.png') }}" alt="">
+            				    <img src="{{ asset('img/logo-acao-comunicativa.png') }}" alt="" style="max-width: 150px">
                             </a>
             			</div>
             			<div>
