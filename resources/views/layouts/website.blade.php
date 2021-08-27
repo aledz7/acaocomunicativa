@@ -66,7 +66,7 @@
                             </a>
             			</div>
             			<div>
-                            <nav x-data="{menu:false}" class="text-right xs:hidden ">
+                            <nav x-data="{menu:false}" class="text-right sm:hidden ">
                                 <button @click='menu = true' class="px-6 py-3">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                                 </button>  
@@ -94,7 +94,7 @@
                                     </li>
                                 </ul>
                             </nav>
-                            <nav class="flex flex-col justify-end relative overflow-hidden w-0 h-0 xs:w-full xs:h-auto max-w-6xl mx-auto text-sm">
+                            <nav class="flex flex-col justify-end relative overflow-hidden w-0 h-0 sm:w-full sm:h-auto max-w-6xl mx-auto text-sm">
                                 <ul>
                                     <div class="space-x-3 text-black mx-auto flex justify-end py-2">
                                         <a href="https://www.facebook.com/acaocomunicativasaude"><i class="fab fa-facebook-f"></i></a>

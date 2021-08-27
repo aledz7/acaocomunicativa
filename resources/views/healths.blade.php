@@ -13,7 +13,7 @@
 <div class="py-8 max-w-6xl mx-auto px-8 lg:px-0">
 	<div class="md:flex">
 		<div class="md:pr-10 flex-1">
-			<div class="mx-auto  px-8 mb-8 lg:px-0">
+			<div class="sm:mx-auto  sm:px-8 mb-8 lg:px-0">
 				<div class=" max-w-6xl text-3xl font-semibold mb-2 text-left mx-auto">
 					#saúde
 					<div class="w-40 h-1 bg-gradient-to-br from-actionblue to-red-700"></div>
