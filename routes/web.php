@@ -124,6 +124,9 @@ Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->prefix('admin/'
         Route::post('boletims/update/{boletim}',[App\Http\Controllers\BoletimController::class,'update'])->name('boletims.update');
         Route::post('boletims/delete/{boletim}',[App\Http\Controllers\BoletimController::class,'destroy'])->name('boletims.delete');
 
+        // Reports
+        Route::get('reports/',[App\Http\Controllers\ReportController::class,'index'])->name('reports');
+
         // Newsletter
         Route::get('newsletter/',[App\Http\Controllers\NewsletterController::class,'index'])->name('newsletter');
 

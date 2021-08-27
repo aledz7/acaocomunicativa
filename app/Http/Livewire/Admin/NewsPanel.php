@@ -65,8 +65,4 @@ class NewsPanel extends Component
     }
 
 
-    public function removeAll()
-    {
-        News::truncate();
-    }
 }

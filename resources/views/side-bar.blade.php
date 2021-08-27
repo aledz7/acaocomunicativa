@@ -1,5 +1,5 @@
 <div>
-	<div class="py-6">
+	<div class="pb-6">
 		<div class="flex-1 text-center bg-gray-100 py-4 px-2">
 			<div class="text-xl font-bold mb-2 text-center">
 				Newsletter

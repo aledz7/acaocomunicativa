@@ -42,11 +42,16 @@
                     </div>
                 @endif
                 <div class="bg-actionblue text-white py-3">
-                    <div class="mx-auto max-w-6xl text-white text-sm flex justify-between px-4">
+                    <div class="mx-auto max-w-6xl text-white text-sm flex justify-between px-4 sm:px-0">
                         <div class="sm:text-left">
-                            <div class="sm:flex">
-                                <div class="font-semibold mr-2">Verbas da Saúde </div>
-                                <div class="hidden sm:block">Rastreamento das destinações das verbas públicas para a saúde</div>
+                            <div class="sm:flex items-center">
+                                <div>
+                                    <img src="/img/verbas-da-saude-logo-horizontal.png" class="-mt-1" alt="Verbas da Saúde - Rastreamento das destinações das verbas públicas para a saúde" title="Verbas da Saúde - Rastreamento das destinações das verbas públicas para a saúde" >
+                                </div>
+                                <div class="border-t w-4 mx-4">
+                                    
+                                </div>
+                                <div class="hidden sm:block"> Rastreamento das destinações das verbas públicas para a saúde</div>
                             </div>
                         </div>
                         <div class="text-center sm:flex sm:space-x-3">
@@ -60,9 +65,9 @@
                 </div>
                 <div class="border-b-2">
             		<div class="flex justify-between items-center py-2 mx-auto max-w-6xl ">
-            			<div class="text-2xl pl-4">
+            			<div class="text-2xl pl-4 sm:pl-0">
                             <a href="{{ config('app.url') }}">
-            				    <img src="{{ asset('img/logo-acao-comunicativa.png') }}" alt="" class="w-100 " style="width: 150px">
+            				    <img src="{{ asset('img/logo-acao-comunicativa.png') }}" alt="">
                             </a>
             			</div>
             			<div>
@@ -221,6 +226,7 @@
                 $(".owl-carousel").owlCarousel({
                     // loop:true,
                     margin:10,
+                    navigation:false,
                     // autoplay:true,
                     autoplayTimeout:3000,
                     autoplayHoverPause:true,
@@ -228,11 +234,11 @@
                     responsive:{
                         0:{
                             items:1,
-                            nav:true
+                            nav:false
                         },
                         800:{
                             items:2,
-                            nav:true
+                            nav:false
                         },
                         1200:{
                             items:3,
