@@ -61,7 +61,9 @@
                 <div class="border-b-2">
             		<div class="flex justify-between items-center py-2 mx-auto max-w-6xl ">
             			<div class="text-2xl pl-4">
-            				<img src="{{ asset('img/logo-acao-comunicativa.png') }}" alt="" class="w-100 " style="width: 150px">
+                            <a href="{{ config('app.url') }}">
+            				    <img src="{{ asset('img/logo-acao-comunicativa.png') }}" alt="" class="w-100 " style="width: 150px">
+                            </a>
             			</div>
             			<div>
                             <nav x-data="{menu:false}" class="text-right xs:hidden ">
