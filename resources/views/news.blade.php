@@ -91,7 +91,7 @@
 										</a>
 
 										
-										@livewire('send-to-mail',['id'=>$news->id,'title'=>$news->title,'short_text'=>$news->short_text])
+										@livewire('send-to-mail',['type'=>'news','post_id'=>$news->id,'title'=>$news->title,'short_text'=>$news->short_text])
 									</div>
 								</div>
 							</div>

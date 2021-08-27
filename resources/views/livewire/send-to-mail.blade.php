@@ -16,7 +16,7 @@
                     Enviar para:
                 </div>
                 <div class="mb-4">
-                    <input type="text" wire:model.bounce.400ms='to' class="w-full border-b-2 border-gray-400 hover:border-actionblue focus:border-actionblue text-gray-700" placeholder="email@email.com.br">
+                    <input type="email" wire:model.bounce.400ms='to' class="w-full border-b-2 border-gray-400 hover:border-actionblue focus:border-actionblue text-gray-700" placeholder="email@email.com.br">
                     @error( 'to' ) <span class="text-red-600 text-xs">{{$message}}</span> @enderror
                 </div>
                 <div class="py-2 font-bold text-left">
@@ -28,7 +28,7 @@
                         @error( 'by_name' ) <span class="text-red-600 text-xs">{{$message}}</span> @enderror
                     </div>
                     <div class="mb-4">
-                        <input type="text" wire:model='by_email' class="w-full border-b-2 border-gray-400 hover:border-actionblue focus:border-actionblue text-gray-700" placeholder="Email">
+                        <input type="email" wire:model='by_email' class="w-full border-b-2 border-gray-400 hover:border-actionblue focus:border-actionblue text-gray-700" placeholder="Email">
                         @error( 'by_email' ) <span class="text-red-600 text-xs">{{$message}}</span> @enderror
                     </div>
                     <div class="mb-4">
