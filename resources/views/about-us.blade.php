@@ -38,7 +38,7 @@
 						</div>
 						<p class="font-bold pt-8 pb-3">Joaquim Nogales</p>
 					</figure>
-					<p class="has-text-align-center text-gray-600">Sócio fundador. Jornalista, mestre em Comunicação Política pela Universidade de Brasília. Atua na com advocacy junto aos Três Poderes, desde 1990.</p>
+					<p class="has-text-align-center text-gray-600">Sócio fundador. Jornalista, mestre em Comunicação Política pela Universidade de Brasília. Atua com advocacy junto aos Três Poderes, desde 1990.</p>
 				</div>
 				<div class="wp-block-column">
 					<figure class="text-center">

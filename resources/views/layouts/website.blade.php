@@ -75,26 +75,26 @@
                                 <button @click='menu = true' class="px-6 py-3">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                                 </button>  
-                                <ul x-show.transition='menu' @click.away='menu = false' class="absolute text-left text-2xl right-0 bg-white  shadow-2xl w-full  divide divide-y text-sm divide-gray-200 border-b border-gray-200" style="display: none;">
-                                    <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                <ul x-show.transition='menu' @click.away='menu = false' class="absolute text-left text-base  right-0 bg-white  shadow-2xl w-full  divide divide-y text-sm divide-gray-200 border-b border-gray-200" style="display: none;">
+                                    <li class="py-4 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                         <a href="{{route('home')}}" title='Home - {{config("app.name") }}'>Home</a>
                                     </li>
-                                    <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                    <li class="py-4 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                         <a href="{{route('noticias')}}" title='Notícias - {{config("app.name") }}'>Notícias</a>
                                     </li>
-                                    <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                    <li class="py-4 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                         <a href="{{route('videos')}}" title='Vídeos - {{config("app.name") }}'>Vídeos</a>
                                     </li>
-                                    <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                    <li class="py-4 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                         <a href="{{route('saude')}}" title='#saúde - {{config("app.name") }}'>#Saude</a>
                                     </li>
-                                    <!-- <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                    <!-- <li class="py-4 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                         <a href="{{route('boletims')}}" title='Verbas da Saúde - {{config("app.name") }}'>Verbas da Saúde</a>
                                     </li> -->
-                                    <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                    <li class="py-4 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                         <a href="{{route('newsletter')}}" title='Newsletter - {{config("app.name") }}'>Newsletter</a>
                                     </li>
-                                    <li class="py-2 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
+                                    <li class="py-4 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                         <a href="{{route('quemSomos')}}" title='Quem Somos - {{config("app.name") }}'>Quem Somos</a>
                                     </li>
                                 </ul>
@@ -224,17 +224,17 @@
         <script>
             $(document).ready(function(){
                 $(".owl-carousel").owlCarousel({
-                    // loop:true,
+                    loop:true,
                     margin:10,
                     navigation:false,
-                    // autoplay:true,
-                    autoplayTimeout:3000,
+                    autoplay:true,
+                    autoplayTimeout:5000,
                     autoplayHoverPause:true,
                     responsiveClass:true,
                     responsive:{
                         0:{
                             items:1,
-                            nav:false
+                            nav:true
                         },
                         800:{
                             items:2,
