@@ -30,18 +30,18 @@
                     <x-jet-nav-link href="{{ route('admin.videos') }}" :active="request()->routeIs('admin.videos')">
                         {{ __('Videos') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('admin.reports') }}" :active="request()->routeIs('admin.reports')">
+                    <!-- <x-jet-nav-link href="{{ route('admin.reports') }}" :active="request()->routeIs('admin.reports')">
                         {{ __('Reports') }}
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('admin.boletims') }}" :active="request()->routeIs('admin.boletims')">
+                    </x-jet-nav-link> -->
+                    <!-- <x-jet-nav-link href="{{ route('admin.boletims') }}" :active="request()->routeIs('admin.boletims')">
                         {{ __('Boletims') }}
-                    </x-jet-nav-link>
+                    </x-jet-nav-link> -->
                     <x-jet-nav-link href="{{ route('admin.newsletter') }}" :active="request()->routeIs('admin.newsletter')">
                         {{ __('Newsletter') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('admin.registereds') }}" :active="request()->routeIs('admin.registereds')">
+                    <!-- <x-jet-nav-link href="{{ route('admin.registereds') }}" :active="request()->routeIs('admin.registereds')">
                         {{ __('Cadastrados') }}
-                    </x-jet-nav-link>
+                    </x-jet-nav-link> -->
 
                 </div>
             </div>
