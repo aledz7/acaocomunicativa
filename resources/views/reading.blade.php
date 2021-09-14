@@ -10,6 +10,7 @@
 
 @section('meta')
     <meta property="og:image" content="/storage/{{$reading->cover}}">
+    <meta property="og:video" content="{{$reading->link}}">
     <meta property="og:image:type" content="image/jpg">
     <meta property="og:image:width" content="1280">
     <meta property="og:image:height" content="720"> 
