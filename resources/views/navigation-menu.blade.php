@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('admin.dashboard') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                        <img src="/logo-marca-dagua.png" alt="" class="w-10">
                     </a>
                 </div>
 

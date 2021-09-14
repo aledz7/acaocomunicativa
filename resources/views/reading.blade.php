@@ -8,6 +8,13 @@
 	{{ucwords($reading->short_text)}} -
 @endsection
 
+@section('meta')
+    <meta property="og:image" content="/storage/{{$reading->cover}}">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="720"> 
+@endsection
+
 @section('content')
 <div class="pt-8 max-w-6xl mx-auto px-2 sm:px-8 lg:px-0">
 	<div class="md:flex">
