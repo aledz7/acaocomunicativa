@@ -18,7 +18,6 @@
 		<div class="bg-yellow-200 max-w-lg py-3 rounded font-bold mx-auto text-yellow-500 text-center "> Hmmm, algo deu errado... Verificou se o reCAPTCHA estava marcado? </div>
 	@endif
     <div>
-	    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<form action="{{ route('cadastre.store') }}" method="post" onsubmit="$('#submitButton').text('Enviando...')">
 			@csrf
 			<div class="sm:w-6/12 mx-auto">
@@ -43,6 +42,7 @@
 					</select>
 				</div>
 				<div class="py-4 text-center">
+	    			<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 					<div class="g-recaptcha flex justify-around" data-callback='verified' data-sitekey="6Le8LSMcAAAAAOrkGe-VhjXBKFXIhWNn3H-L9NA_"></div>
 					<script>
 						function verified()
