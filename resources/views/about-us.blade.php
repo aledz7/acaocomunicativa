@@ -40,15 +40,7 @@
 					</figure>
 					<p class="has-text-align-center text-gray-600">Sócio fundador. Jornalista, mestre em Comunicação Política pela Universidade de Brasília. Atua com advocacy junto aos Três Poderes, desde 1990.</p>
 				</div>
-				<div class="wp-block-column">
-					<figure class="text-center">
-						<div class="w-60 h-60 rounded-full overflow-hidden mx-auto">
-							<img loading="lazy" src="/img/altair-ribeiro.jpeg" alt="Altair Nogales" >
-						</div>
-						<p class="font-bold pt-8 pb-3">Altair Ribeiro</p>
-					</figure>
-					<p class="has-text-align-center text-gray-600">Gestor de projetos, nas áreas de finanças e marketing, com atuação profissional em grupos financeiros e industriais do Brasil e do exterior, há mais de 40 anos.</p>
-				</div>
+				
 				<div class="wp-block-column">
 					<figure class="text-center">
 						<div class="w-60 h-60 rounded-full overflow-hidden mx-auto">
