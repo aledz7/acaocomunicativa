@@ -32,7 +32,6 @@ class ReportsPanel extends Component
         'newReportTitle'=>'required',
         'newReportDate'=>'required',
         'newReportFile'=>'file|mimes:png,jpg,pdf|max:10240000',
-        'temporary_file_upload'=>'file|mimes:png,jpg,pdf|max:10240000',
         'newReportCover'=>'required',
         'reportEdit.title'=>'required',
         'reportEdit.date'=>'required',
