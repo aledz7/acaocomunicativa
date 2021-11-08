@@ -98,7 +98,7 @@
             </div>
         </x-slot>
         <x-slot name='footer'>
-            <span wire:loading> Carregando... </span>
+            <span wire:loading> Carregando. Por favor, aguarde... </span>
             <x-jet-button wire:loading.remove wire:click='saveReport'>Adicionar</x-jet-button>
         </x-slot>
     </x-jet-dialog-modal>
