@@ -18,7 +18,7 @@ class Report extends Model
 
     public function getCoverImageAttribute()
     {
-        $image =  $this->cover ?? '/no-image.png';
+        $image =  \Storage::url($this->cover);
         return "<img src=". $image .">";
     }
 }
