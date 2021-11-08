@@ -74,7 +74,7 @@ class ReportsPanel extends Component
         ]);
 
         $file = $this->newReportFile->store('reports','public');
-        $cover = $this->newReportFile->store('covers','public');
+        $cover = $this->newReportCover->store('covers','public');
 
         $report = new Report;
         $report->added_by_id = auth()->user()->id;
