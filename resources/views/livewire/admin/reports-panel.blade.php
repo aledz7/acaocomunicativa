@@ -28,9 +28,9 @@
                 </button>
             </div>
         </div>
-        <div class="grid grid-cols-4 gap-10">
+        <div class="">
             @foreach( $reports as $report )
-                <div class="bg-white px-3 py-2">
+                <div class="bg-white px-3 py-2 flex mb-4 items-center">
                     <div class="pr-6">
                         @if( $report->cover )
                             <img src="{{asset('/storage/'.$report->cover)}}" alt="" class="w-12">
@@ -38,52 +38,19 @@
                             <img src="{{asset('/img/no-image.png')}}" alt="" class="w-12">
                         @endif
                     </div>
-                    <div class="flex-1">
-                        <p class="font-bold text-sm">{{substr($report->title,0,60)}} </p>
-                        <p class="text-xs text-gray-600">{{ substr($report->short_text,0,150)}}</p>
-                    </div>
-                    <div class="flex-1 flex flex-col text-center text-sm">
-                        {{$report->date_display}}
+                    <div class="flex-1 flex flex-col text-sm">
+                        {{$report->title}}
+                        <span class="text-gray-400 italic text-xs">
+                            {{$report->date_display}}
+                        </span>
                     </div>
                     <div class="flex-1 flex flex-col">
                         <span class="font-bold text-sm">Categorias:</span>
                     </div>
-                    <div x-data='{options:false,modal:false}' class="flex justify-between">
+                    <div class="flex justify-between">
                         <div class="space-x-2 flex">
-                            <a href='' target="_blank">Ver no site </a>
-                            <a href="" ><button class="bg-blue-600 text-white px-2 rounded text-sm">Editar</button></a>
-                            <div class="relative" >
-                                <button @click='options = true'  class="px-2">...</button>
-                                <div x-show='options'  class="bg-white shadow-lg rounded border border-gray-100 absolute z-10 right-0 w-40">
-                                    <ul>
-                                        <li @click='modal = true,options = false' class="hover:bg-gray-100 cursor-pointer p-2">Enviar Mailing</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div x-show='modal' class="absolute bg-black bg-opacity-50 left-0 right-0 top-0 bottom-0 p-20" style="display: none;">
-                            <div x-show.transition='modal' @='modal = false'  class="bg-white rounded shadow-2xl w-6/12 mx-auto" >
-                                <div class="px-6 py-3 border-b border-gray-200 flex justify-end">
-                                    <button @click='modal = false' >Fechar</button>
-                                </div>
-                                <div class="p-10 ">
-                                    <div class="text-3xl py-4">
-                                        Enviar e-mail para os 
-                                    </div>
-                                    <div class="mb-4">
-                                        Selecionando os campos abaixo, a notícia será enviada para todos que pertencem a categoria.
-                                    </div>
-                                    <div>
-                                       
-                                    </div>
-                                    <div class="flex justify-between py-2 px-3 mt-4 bg-gray-100 rounded">
-                                        <div>
-                                            <button wire:loading wire:target='sendTo' class="bg-gray-300 px-2 py-1 rounded  disabled" >Enviando... </button>
-                                            <button wire:loading.remove wire:target='sendTo' class="bg-blue-600 px-2 py-1 rounded text-white" wire:click='sendTo({{$report->id}})'>Enviar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <a href="{{ route('reports') }}" target="_blank">Ver no site </a>
+                            <button wire:click="editReport({{$report->id}})" class="bg-blue-600 text-white px-2 rounded text-sm">Editar</button>
                         </div>
                     </div>
                 </div>
@@ -111,23 +78,61 @@
                 <div>
                     <div class="font-bold italic text-xs mb-2">Título</div>
                     <input wire:model='newReportTitle' type="text" class="input w-full" placeholder="Título">
+                    @error( 'newReportTitle' ) {{ $message }} @enderror
                 </div>
                 <div>
                     <div class="font-bold italic text-xs mb-2">Data</div>
                     <input wire:model='newReportDate' type="date" class="input w-full" placeholder="Título">
+                    @error( 'newReportDate' ) {{ $message }} @enderror
                 </div>
                 <div>
                     <div class="font-bold italic text-xs mb-2">Arquivo</div>
                     <input wire:model='newReportFile' type="file" class="input w-full" placeholder="Título">
+                    @error( 'newReportFile' ) {{ $message }} @enderror
                 </div>
                 <div>
                     <div class="font-bold italic text-xs mb-2">Capa</div>
                     <input wire:model='newReportCover' type="file" class="input w-full" placeholder="Título">
+                    @error( 'newReportCover' ) {{ $message }} @enderror
                 </div>
             </div>
         </x-slot>
         <x-slot name='footer'>
             <x-jet-button wire:click='saveReport'>Adicionar</x-jet-button>
+        </x-slot>
+    </x-jet-dialog-modal>
+
+    <x-jet-dialog-modal wire:model='modalEdit'>
+        <x-slot name='title'>Editar Informativo </x-slot>
+        <x-slot name='content'>
+            @if( $reportEdit )
+                <div class="p-2 space-y-6">
+                    <div>
+                        <div class="font-bold italic text-xs mb-2">Título</div>
+                        <input wire:model='reportEdit.title' type="text" class="input w-full" />
+                    </div>
+                    <div>
+                        <div class="font-bold italic text-xs mb-2">Data</div>
+                        <input wire:model='reportEdit.date' type="date" class="input w-full" />
+                    </div>
+                    <div>
+                        <div class="font-bold italic text-xs mb-2">Arquivo</div>
+                        <input wire:model='reportEdit.file' type="file" class="input w-full" />
+                    </div>
+                    <div>
+                        <div class="font-bold italic text-xs mb-2">Capa</div>
+                        <input wire:model='reportEdit.cover' type="file" class="input w-full" />
+                    </div>
+                </div>
+            @endif
+        </x-slot>
+        <x-slot name='footer'>
+            @if( $reportEdit )
+            <div class="flex justify-between">
+                <x-jet-button wire:click='removeReport'>Rmover</x-jet-button>
+                <x-jet-button wire:click='updateReport'>Atualizar</x-jet-button>
+            </div>
+            @endif
         </x-slot>
     </x-jet-dialog-modal>
 </div>

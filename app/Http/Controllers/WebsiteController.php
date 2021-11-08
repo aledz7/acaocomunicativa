@@ -10,6 +10,7 @@ use App\Models\Boletim;
 use App\Models\Category;
 use App\Models\Newsletter;
 use App\Models\Configuration;
+use App\Models\Report;
 use PDF;
 
 class WebsiteController extends Controller
@@ -231,6 +232,14 @@ class WebsiteController extends Controller
         // return view('print',['news'=>$news]);
         $pdf = PDF::loadView('print', $data);
         return $pdf->stream();
+    }
+
+    public function reports()
+    {
+        $reports = Report::orderBy('date','desc')->get();
+        return view('reports',[
+            'reports'=>$reports
+        ]);
     }
 }
 

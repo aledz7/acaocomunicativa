@@ -19,17 +19,24 @@ class ReportsPanel extends Component
     public $sortField = 'date';
 
     public $modalAdd = false;
+    public $modalEdit = false;
 
     public $newReportTitle;
     public $newReportDate;
     public $newReportCover;
     public $newReportFile;
 
+    public $reportEdit;
+
     protected $rules = [
         'newReportTitle'=>'required',
         'newReportDate'=>'required',
         'newReportFile'=>'required',
         'newReportCover'=>'required',
+        'reportEdit.title'=>'required',
+        'reportEdit.date'=>'required',
+        'reportEdit.file'=>'required',
+        'reportEdit.cover'=>'required',
     ];
 
 
@@ -72,6 +79,24 @@ class ReportsPanel extends Component
         $report->cover = $cover;
         $report->save();
 
+    }
+
+    public function editReport( $id )
+    {
+        $this->reportEdit = Report::find($id);
+        $this->modalEdit = true;
+    }
+
+    public function updateReport()
+    {
+        $this->reportEdit->save();
+        $this->modalEdit = false;
+    }
+
+    public function removeReport()
+    {
+        $this->modalEdit = false;
+        $this->reportEdit->delete();
     }
 
 }
