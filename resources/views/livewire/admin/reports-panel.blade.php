@@ -98,7 +98,8 @@
             </div>
         </x-slot>
         <x-slot name='footer'>
-            <x-jet-button wire:click='saveReport'>Adicionar</x-jet-button>
+            <span wire:loading> Carregando... </span>
+            <x-jet-button wire:loading.remove wire:click='saveReport'>Adicionar</x-jet-button>
         </x-slot>
     </x-jet-dialog-modal>
 

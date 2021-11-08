@@ -31,11 +31,12 @@ class ReportsPanel extends Component
     protected $rules = [
         'newReportTitle'=>'required',
         'newReportDate'=>'required',
-        'newReportFile'=>'required',
+        'newReportFile'=>'file|mimes:png,jpg,pdf|max:10240000',
+        'temporary_file_upload'=>'file|mimes:png,jpg,pdf|max:10240000',
         'newReportCover'=>'required',
         'reportEdit.title'=>'required',
         'reportEdit.date'=>'required',
-        'reportEdit.file'=>'required',
+        'reportEdit.file'=>'required|max:102400',
         'reportEdit.cover'=>'required',
     ];
 
