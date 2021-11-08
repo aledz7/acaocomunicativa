@@ -26,7 +26,7 @@
 						@foreach( $reports as $report )
 						<a href="{{ Storage::url($report->file)}}" target="_blank">
 							<div class="">
-								<div class="w-full h-80 bg-gray-100 mb-4">
+								<div class="w-full min-h-80 bg-gray-100 mb-4">
 									{!! $report->cover_image !!}
 								</div>
 								<div class="font-bold font-sm">{{$report->title}}</div>

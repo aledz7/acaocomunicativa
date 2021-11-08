@@ -118,11 +118,11 @@
                     </div>
                     <div>
                         <div class="font-bold italic text-xs mb-2">Arquivo</div>
-                        <input wire:model='reportEdit.file' type="file" class="input w-full" />
+                        <input wire:model='reportEditFile' type="file" class="input w-full" />
                     </div>
                     <div>
                         <div class="font-bold italic text-xs mb-2">Capa</div>
-                        <input wire:model='reportEdit.cover' type="file" class="input w-full" />
+                        <input wire:model='reportEditCover' type="file" class="input w-full" />
                     </div>
                 </div>
             @endif

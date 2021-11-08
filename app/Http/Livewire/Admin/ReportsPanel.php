@@ -25,6 +25,8 @@ class ReportsPanel extends Component
     public $newReportDate;
     public $newReportCover;
     public $newReportFile;
+    public $reportEditCover;
+    public $reportEditFile;
 
     public $reportEdit;
 
@@ -35,8 +37,8 @@ class ReportsPanel extends Component
         'newReportCover'=>'required',
         'reportEdit.title'=>'required',
         'reportEdit.date'=>'required',
-        'reportEdit.file'=>'required|max:102400',
-        'reportEdit.cover'=>'required',
+        'reportEditFile'=>'required|max:102400',
+        'reportEditCover'=>'required',
     ];
 
 
@@ -100,6 +102,18 @@ class ReportsPanel extends Component
 
     public function updateReport()
     {
+
+        if( $this->reportEditFile )
+        {
+            $file = $this->reportEditFile->store('reports','public');
+            $this->reportEdit->file = $file;
+        }
+        if( $this->reportEditCover )
+        {
+            $cover = $this->reportEditCover->store('covers','public');
+            $this->reportEdit->cover = $cover;
+        }
+
         $this->reportEdit->save();
         $this->modalEdit = false;
     }
