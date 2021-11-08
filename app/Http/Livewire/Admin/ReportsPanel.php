@@ -66,7 +66,12 @@ class ReportsPanel extends Component
     public function saveReport()
     {
 
-        $this->validate();
+        $this->validate([
+            'newReportTitle'=>'required',
+            'newReportDate'=>'required',
+            'newReportFile'=>'required|max:10240000',
+            'newReportCover'=>'required',
+        ]);
 
         $file = $this->newReportFile->store('reports','public');
         $cover = $this->newReportFile->store('covers','public');
@@ -78,6 +83,12 @@ class ReportsPanel extends Component
         $report->file = $file;
         $report->cover = $cover;
         $report->save();
+
+        $this->newReportTitle = '';
+        $this->newReportDate = '';
+        $this->newReportFile = '';
+        $this->newReportCover = '';
+        $this->modalAdd = false;
 
     }
 
