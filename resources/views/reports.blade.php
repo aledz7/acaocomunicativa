@@ -6,7 +6,7 @@
 @endsection
 
 @section('title')
-	Notícias {{@$category->name}}
+	Informes {{@$category->name}}
 @endsection
 
 @section('content')
