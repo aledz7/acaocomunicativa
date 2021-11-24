@@ -9,6 +9,9 @@ use Livewire\WithFileUploads;
 use App\Models\Report;
 use Mail;
 
+use Illuminate\Support\Str;
+
+
 class ReportsPanel extends Component
 {
 
@@ -84,6 +87,8 @@ class ReportsPanel extends Component
         $report->date = $this->newReportDate;
         $report->file = $file;
         $report->cover = $cover;
+        $slug = Str::slug($this->title, '-');
+        $report->slug = $slug;
         $report->save();
 
         $this->newReportTitle = '';

@@ -1,5 +1,20 @@
 @extends('layouts.website')
 
+@section('title')
+	Agência de Comunicação e de Relacionamento Institucional e Governamental para o Terceiro Setor 
+@endsection
+
+@section('description')
+	Empresa especializada em captação de recursos para entidades filantrópicas e em produção de conteúdo com foco em saúde.
+@endsection
+
+@section('meta')
+    <meta property="og:image" content="/storage/{{\App\Models\News::inRandomOrder()->first()->cover}}">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="720"> 
+@endsection
+
 @section('content')
 
 <div class="max-w-6xl mx-auto grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 py-10 owl-carousel">
@@ -85,7 +100,7 @@
 				@foreach( $news->take(2) as $key=>$new )
 					<a href="{{$new->slug}}" class="@if( $key == 0 ) lg:col-span-2 @endif group" title="{{$new->title}} - {{ config('app.name') }}" >
 						<div >
-							<div class="h-64 overflow-hidden" style="background: url('{{asset('/storage/'.$new->cover)}}') no-repeat; background-size: cover; background-position: center; ">
+							<div class="h-64 overflow-hidden" style="background: url('{{asset('/storage/'.$new->cover)}}') no-repeat; background-size: cover;  ">
 							</div>
 							<div class="py-10 group-hover:text-actionblue transition duration-300">
 								<div class="font-bold text-2xl line-clamp-2 h-16">

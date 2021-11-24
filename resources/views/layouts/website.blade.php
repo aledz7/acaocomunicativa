@@ -24,7 +24,22 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
         <script src="https://kit.fontawesome.com/e1c06b7241.js" crossorigin="anonymous"></script>
-
+        <style>
+            .owl-prev{
+                width: 30px !important;
+                background-color: #224d7a !important;
+                color:  #fff !important;
+                margin-right: 10px;
+            }
+            .owl-next{
+                width: 30px !important;
+                background-color: #224d7a !important;
+                color:  #fff !important;
+            }
+            .owl-nav{
+                margin-top: 10px;
+            }
+        </style>
         @yield('styles')
         @livewireStyles
 
@@ -243,18 +258,17 @@
                     autoplayTimeout:5000,
                     autoplayHoverPause:true,
                     responsiveClass:true,
+                    nav:true,
                     responsive:{
                         0:{
                             items:1,
-                            nav:true
                         },
                         800:{
                             items:2,
-                            nav:false
                         },
                         1200:{
                             items:3,
-                            nav:false
+                            loop:false,
                         }
                     }
                 });

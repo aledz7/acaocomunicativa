@@ -193,6 +193,7 @@ class WebsiteController extends Controller
     {
 
         $reading = News::where('slug',$slug)->first();
+
         if( $reading != null )
         {
             $type = 'news';
@@ -218,6 +219,15 @@ class WebsiteController extends Controller
         return redirect('home');
 
 
+    }
+
+    public function reportRead( $slug )
+    {
+        $report = Report::where('slug',$slug)->first();
+
+        if( $report == null ) abort(404);
+
+    return view('report',['report'=>$report]);
     }
 
     public function newsPrint($slug)

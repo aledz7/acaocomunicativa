@@ -150,6 +150,7 @@ Route::get('/print-{slug?}',[App\Http\Controllers\WebsiteController::class,'news
 Route::get('/videos-{slug?}',[App\Http\Controllers\WebsiteController::class,'videosCategory'])->name('videos.category');
 Route::get('/noticias/{slug}',[App\Http\Controllers\WebsiteController::class,'reading'])->name('reading');
 Route::get('/informes',[App\Http\Controllers\WebsiteController::class,'reports'])->name('reports');
+Route::get('/informe/{slug}',[App\Http\Controllers\WebsiteController::class,'reportRead'])->name('report');
 Route::get('/{slug}',[App\Http\Controllers\WebsiteController::class,'reading'])->name('reading');
 
 
