@@ -110,7 +110,7 @@
                                         <a href="{{route('boletims')}}" title='Verbas da Saúde - {{config("app.name") }}'>Verbas da Saúde</a>
                                     </li> -->
                                     <li class="py-4 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                        <a href="{{route('reports')}}" title='Reports - {{config("app.name") }}'>Cases</a>
+                                        <a href="{{route('reports')}}" title='Reports - {{config("app.name") }}'>Case</a>
                                     </li>
                                     <li class="py-4 px-3 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                         <a href="{{route('newsletter')}}" title='Newsletter - {{config("app.name") }}'>Newsletter</a>
@@ -146,7 +146,7 @@
                                            <a href="{{route('boletims')}}" title='Verbas da Saúde - {{ config("app.name") }}'>Verbas da Saúde</a>
                                        </li> -->
                                        <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                           <a href="{{route('reports')}}" title='Reports - {{ config("app.name") }}'>Cases</a>
+                                           <a href="{{route('reports')}}" title='Reports - {{ config("app.name") }}'>Case</a>
                                        </li>
                                     <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
                                            <a href="{{route('newsletter')}}" title='Newsletter - {{ config("app.name") }}'>Newsletter</a>
