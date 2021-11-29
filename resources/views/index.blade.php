@@ -100,7 +100,8 @@
 				@foreach( $news->take(2) as $key=>$new )
 					<a href="{{$new->slug}}" class="@if( $key == 0 ) lg:col-span-2 @endif group" title="{{$new->title}} - {{ config('app.name') }}" >
 						<div >
-							<div class="h-64 overflow-hidden" style="background: url('{{asset('/storage/'.$new->cover)}}') no-repeat; background-size: cover;  ">
+							<div class="overflow-hidden"> 
+								<img src="{{asset('/storage/'.$new->cover)}}" title="{{$new->title}} - {{ config('app.name') }}" alt="{{$new->title}} - {{ config('app.name') }}" class='w-full'>
 							</div>
 							<div class="py-10 group-hover:text-actionblue transition duration-300">
 								<div class="font-bold text-2xl line-clamp-2 h-16">
