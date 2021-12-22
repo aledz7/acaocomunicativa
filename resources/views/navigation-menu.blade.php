@@ -39,6 +39,7 @@
                     <x-jet-nav-link href="{{ route('admin.newsletter') }}" :active="request()->routeIs('admin.newsletter')">
                         {{ __('Newsletter') }}
                     </x-jet-nav-link>
+                    
                     <!-- <x-jet-nav-link href="{{ route('admin.registereds') }}" :active="request()->routeIs('admin.registereds')">
                         {{ __('Cadastrados') }}
                     </x-jet-nav-link> -->

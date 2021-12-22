@@ -14,7 +14,8 @@ class SearchBar extends Component
     {
         return view('livewire.search-bar',[
         	'videos'=> \DB::table('videos')->where('title','like','%'.$this->search.'%')->get()->take(5),
-        	'news'=> \DB::table('news')->where('title','like','%'.$this->search.'%')->get()->take(5)
+            'news'=> \DB::table('news')->where('title','like','%'.$this->search.'%')->get()->take(5),
+        	'healths'=> \DB::table('healths')->where('title','like','%'.$this->search.'%')->get()->take(5),
         ]);
     }
 

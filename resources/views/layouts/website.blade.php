@@ -90,6 +90,9 @@
             			</div>
             			<div>
                             <nav x-data="{menu:false}" class="text-right sm:hidden ">
+                                <div class="text-left float-left mt-2">
+                                    @livewire('search-bar')
+                                </div>
                                 <button @click='menu = true' class="px-6 py-3">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                                 </button>  
@@ -129,30 +132,33 @@
                                         <!-- <i class="fab fa-twitter"></i> -->
                                     </div>
                                 </ul>
-                                <ul class="flex flex-1 uppercase items-center font-bold  w-full">
-                                    <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                           <a href="{{route('home')}}" title='Home - {{ config("app.name") }}'>Home</a>
-                                       </li>
-                                    <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                           <a href="{{route('noticias')}}" title='Notícias - {{ config("app.name") }}'>Notícias</a>
-                                       </li>
-                                    <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                           <a href="{{route('videos')}}" title='Vídeos - {{ config("app.name") }}'>Vídeos</a>
-                                       </li>
-                                       <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                           <a href="{{route('saude')}}" title='Vídeos - {{ config("app.name") }}'>#Saude</a>
-                                       </li>
-                                        <!-- <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                           <a href="{{route('boletims')}}" title='Verbas da Saúde - {{ config("app.name") }}'>Verbas da Saúde</a>
-                                       </li> -->
-                                       <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                           <a href="{{route('reports')}}" title='Reports - {{ config("app.name") }}'>Case</a>
-                                       </li>
-                                    <li class="px-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                           <a href="{{route('newsletter')}}" title='Newsletter - {{ config("app.name") }}'>Newsletter</a>
-                                       </li>
+                                <ul class="flex flex-1  items-center w-full">
+                                    <li class="px-3 pt-2 pb-4 hover:text-actionblue uppercase font-bold transition ease-in-out duration-200 ease-in-out ">
+                                        <a href="{{route('home')}}" title='Home - {{ config("app.name") }}'>Home</a>
+                                    </li>
+                                    <li class="px-3 pt-2 pb-4 hover:text-actionblue uppercase font-bold transition ease-in-out duration-200 ease-in-out ">
+                                        <a href="{{route('noticias')}}" title='Notícias - {{ config("app.name") }}'>Notícias</a>
+                                    </li>
+                                    <li class="px-3 pt-2 pb-4 hover:text-actionblue uppercase font-bold transition ease-in-out duration-200 ease-in-out ">
+                                        <a href="{{route('videos')}}" title='Vídeos - {{ config("app.name") }}'>Vídeos</a>
+                                    </li>
+                                    <li class="px-3 pt-2 pb-4 hover:text-actionblue uppercase font-bold transition ease-in-out duration-200 ease-in-out ">
+                                        <a href="{{route('saude')}}" title='Vídeos - {{ config("app.name") }}'>#Saude</a>
+                                    </li>
+                                    <!-- <li class="px-3 pt-2 pb-4 hover:text-actionblue uppercase font-bold transition ease-in-out duration-200 ease-in-out ">
+                                       <a href="{{route('boletims')}}" title='Verbas da Saúde - {{ config("app.name") }}'>Verbas da Saúde</a>
+                                    </li> -->
+                                    <li class="px-3 pt-2 pb-4 hover:text-actionblue uppercase font-bold transition ease-in-out duration-200 ease-in-out ">
+                                        <a href="{{route('reports')}}" title='Reports - {{ config("app.name") }}'>Case</a>
+                                    </li>
+                                    <li class="px-3 pt-2 pb-4 hover:text-actionblue uppercase font-bold transition ease-in-out duration-200 ease-in-out ">
+                                        <a href="{{route('newsletter')}}" title='Newsletter - {{ config("app.name") }}'>Newsletter</a>
+                                    </li>
+                                    <li class="pl-3 pt-2 pb-4 hover:text-actionblue uppercase font-bold transition ease-in-out duration-200 ease-in-out ">
+                                        <a href="{{route('quemSomos')}}" title='Quem Somos - {{ config("app.name") }}'>Quem Somos</a>
+                                    </li>
                                     <li class="pl-3 pt-2 pb-4 hover:text-actionblue transition ease-in-out duration-200 ease-in-out ">
-                                           <a href="{{route('quemSomos')}}" title='Quem Somos - {{ config("app.name") }}'>Quem Somos</a>
+                                        @livewire('search-bar')
                                     </li>
                                 </ul>
                             </nav>         
