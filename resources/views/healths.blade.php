@@ -16,7 +16,7 @@
 			<div class="sm:mx-auto  sm:px-8 mb-8 lg:px-0 mb-20" style="background: url('/img/bg-banner-saude.png') no-repeat; background-size: cover ;">
 				<div class=" max-w-6xl text-3xl font-semibold mb-2 text-left mx-auto pt-6 pb-6 px-4">
 					<img src="/img/logo-saude.png" alt="#Saúde - Vitrine de matérias publicadas, pelos parlamentares, relacionadas a saúde pública." >
-					<p class="text-base sm:w-6/12 pl-2 pt-2 border-t-4 border-actionblue text-actionblue mt-2">Vitrine de matérias publicadas, pelos parlamentares, relacionadas a saúde pública.</p>
+					<p class="text-base sm:w-6/12 pl-2 pt-2 border-t-4 border-actionblue text-actionblue mt-2 hidden">Vitrine de matérias publicadas, pelos parlamentares, relacionadas a saúde pública.</p>
 				</div>
 			</div>
 			<div class="space-y-14">
