@@ -12,8 +12,13 @@
     <meta property="og:image" content="/storage/{{$reading->cover}}">
     <meta property="og:video" content="{{$reading->link}}">
     <meta property="og:image:type" content="image/jpg">
-    <meta property="og:image:width" content="1280">
-    <meta property="og:image:height" content="720"> 
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="180"> 
+	<meta property="og:type" content="website" />
+	<meta property="og:updated_time" content="{{strtotime($reading->updated_at)}}" />
+	<meta property="og:site_name" content="Ação Comunicativa" />
+	<meta property="og:title" content="{{ucfirst($reading->title)}}" />
+	<meta property="og:description" content="{{ucfirst($reading->short_text)}}" />
 @endsection
 
 @section('content')
