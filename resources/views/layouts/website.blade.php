@@ -8,7 +8,7 @@
 
         @yield('meta')
 
-        <title> @yield('title') {{ config('app.name', 'Laravel') }}</title>
+        <title> @yield('title') Ação Comunicativa</title>
 
         <link rel="icon" href="favicon.ico" />
 
