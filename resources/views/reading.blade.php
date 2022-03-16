@@ -1,11 +1,11 @@
 @extends('layouts.website')
 
 @section('title')
-	{{ucwords($reading->title)}} -
+	{{ucfirst($reading->title)}} -
 @endsection
 
 @section('description')
-	{{ucwords($reading->short_text)}} -
+	{{ucfirst($reading->short_text)}} -
 @endsection
 
 @section('meta')
