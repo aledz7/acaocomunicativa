@@ -29,6 +29,8 @@
 
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+        <script src="{{ asset('js/summernote-image-title.js')}}"></script>
+
         @livewireScripts
 
         @yield('scripts')

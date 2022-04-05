@@ -3,8 +3,8 @@
 	    <div class="col-md-12 py-4">
 	       <p class="py-4 bg-gray-100 px-3 d-flex justify-content-between" style="background: #efefef">
 	           <a href='{{route("admin.news")}}'><button class="btn btn-default">Voltar</button></a>
-	           <button class="btn btn-primary" wire:click='save'>
-	           		<span wire:loading.remove wire:target='save'>Salvar</span>
+	           <button class="btn btn-primary" wire:click='save'  onclick="$('.note-editable').focus();$('.note-editable').blur();">
+	           		<span wire:loading.remove wire:target='save' >Salvar</span>
 	           		<span wire:loading wire:target='save'>Salvando...</span>
 	           </button>
 	       </p>
@@ -107,9 +107,22 @@
 			</div>
 		</div>
 	</div>
+
 	<script>
 	    $(document).ready(function() {
 	        $('#summernote').summernote({
+                imageTitle: {
+                  specificAltField: true,
+                },
+                lang: 'pt-BR',
+                popover: {
+                    image: [
+                        ['image', ['resizeFull', 'resizeHalf', 'resizeQuarter', 'resizeNone']],
+                        ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                        ['remove', ['removeMedia']],
+                        ['custom', ['imageTitle']],
+                    ],
+                },
 	            tabsize: 2,
 	            minHeight:400,
 	            callbacks: {
@@ -117,7 +130,7 @@
                     	var textareaValue = $('#summernote').summernote('code');
                     	@this.set('news.text', textareaValue);
                     }
-                }
+                },
 	        });
 	    });
 	    $(document).ready(function() {

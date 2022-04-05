@@ -44,6 +44,7 @@
 					{{$reading->short_text}}
 				</div>
 
+				
 				<div class="my-12 text-gray-600 sm:mb-40 content-new">
 					{!! $reading->text !!}
 				</div>
@@ -118,6 +119,17 @@
 @endsection
 
 @section('scripts')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+	$(document).ready(function() {
+		$('.content-new').find('img').each(function(){
+			if( $(this).attr('title').length > 0 )
+			{
+				$(this).after("<div class='text-xs ml-0 p-2 bg-white' style='text-indent:0px'>"+$(this).attr('title')+" <span class='text-gray-600'> - "+$(this).attr('alt')+"</span></div>");
+			}
+		})
+	});
+</script>
 <script>
 		function openPopUp(url, title) {
 		    var w = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width,
