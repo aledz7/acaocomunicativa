@@ -25,7 +25,7 @@ Route::get('send-news/{id}',function($id){
 
 Route::get('sitemap',function(){
 
-    $sitemap = Sitemap::create();
+    $sitemap = Sitemap::create('https://acaocomunicativa.com.br');
 
     foreach( \App\Models\News::get() as $new )
     {
@@ -37,6 +37,7 @@ Route::get('sitemap',function(){
             ->setLastModificationDate(Carbon::yesterday())
             ->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY)
             ->setPriority(0.1));
+
 
     }
     foreach( \App\Models\Video::get() as $new )
