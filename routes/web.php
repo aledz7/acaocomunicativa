@@ -142,9 +142,6 @@ Route::middleware(['auth:sanctum', 'verified'])->name('admin.')->prefix('admin/'
 
 });
 
-Route::get('phpinfo',function(){
-    return phpinfo();
-});
 Route::get('/#saude-{slug?}',[App\Http\Controllers\WebsiteController::class,'healthsCategory'])->name('healths.category');
 Route::get('/noticias-{slug?}',[App\Http\Controllers\WebsiteController::class,'newsCategory'])->name('news.category');
 Route::get('/print-{slug?}',[App\Http\Controllers\WebsiteController::class,'newsPrint'])->name('news.print');
