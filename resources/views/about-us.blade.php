@@ -74,13 +74,24 @@
 				<div class="wp-block-column">
 					<figure class="text-center">
 						<div class="w-60 h-60 rounded-full overflow-hidden mx-auto">
-							<img loading="lazy" src="/img/lennon-custodio.jpg" alt="Lennon Custódio" >
+							<img loading="lazy" src="/img/carlos-guerra.jpg" alt="Carlos Guerra" title="Carlos Guerra" >
 						</div>
-						<p class="font-bold pt-8 pb-3">Lennon Custódio </p>
+						<p class="font-bold pt-8 pb-3">Carlos Guerra </p>
 					</figure>
 					<p class="has-text-align-center text-gray-600">
-						<!-- Relações Institucionais - Cientista Político, Administrador de Empresas, Economista e Especialista em Orçamento Público. Possui larga experiência como palestrante e na gestão de políticas públicas, com atuação de mais de 30 anos como assessor parlamentar na Câmara dos Deputados. -->
-						Cientista Político, Administrador de Empresas, Economista e Especialista em Orçamento Público.
+						Relações Institucionais <!-- - Cientista Político, Administrador de Empresas, Economista e Especialista em Orçamento Público. Possui larga experiência como palestrante e na gestão de políticas públicas, com atuação de mais de 30 anos como assessor parlamentar na Câmara dos Deputados. -->
+					</p>
+				</div>
+
+				<div class="wp-block-column">
+					<figure class="text-center">
+						<div class="w-60 h-60 rounded-full overflow-hidden mx-auto">
+							<img loading="lazy" src="/img/camila-esteves.jpg" alt="Camila Esteve" title="Camila Esteve" >
+						</div>
+						<p class="font-bold pt-8 pb-3">Camila Esteve </p>
+					</figure>
+					<p class="has-text-align-center text-gray-600">
+						Relações Institucionais <!-- - Cientista Político, Administrador de Empresas, Economista e Especialista em Orçamento Público. Possui larga experiência como palestrante e na gestão de políticas públicas, com atuação de mais de 30 anos como assessor parlamentar na Câmara dos Deputados. -->
 					</p>
 				</div>
 
