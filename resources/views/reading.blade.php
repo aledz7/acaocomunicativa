@@ -9,16 +9,18 @@
 @endsection
 
 @section('meta')
-    <meta property="og:image" content="/storage/{{$reading->cover}}">
-    <meta property="og:video" content="{{$reading->link}}">
-    <meta property="og:image:type" content="image/jpg">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="180"> 
-	<meta property="og:type" content="website" />
-	<meta property="og:updated_time" content="{{strtotime($reading->updated_at)}}" />
-	<meta property="og:site_name" content="Ação Comunicativa" />
+	<meta property="og:locale" content="pt_BR" />
+	<meta property="og:type" content="article" />
 	<meta property="og:title" content="{{ucfirst($reading->title)}}" />
 	<meta property="og:description" content="{{ucfirst($reading->short_text)}}" />
+	<meta property="og:url" content="https://acaocomunicativa.com.br/{{$reading->slug}}" />
+	<meta property="og:site_name" content="{{ config('app.name') }}" />
+	
+    <meta property="og:video" content="{{$reading->link}}">
+
+	<meta property="og:image:width" content="1280" />
+	<meta property="og:image:height" content="720" />
+	<meta property="og:image:type" content="image/jpeg" />
 @endsection
 
 @section('content')
