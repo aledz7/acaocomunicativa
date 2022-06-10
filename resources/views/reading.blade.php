@@ -16,7 +16,9 @@
 	<meta property="og:url" content="https://acaocomunicativa.com.br/{{$reading->slug}}" />
 	<meta property="og:site_name" content="{{ config('app.name') }}" />
 	
-    <meta property="og:video" content="{{$reading->link}}">
+	@if( $type == 'video')
+    	<meta property="og:video" content="{{$reading->link}}">
+    @endif
 
 	<meta property="og:image:width" content="1280" />
 	<meta property="og:image:height" content="720" />
