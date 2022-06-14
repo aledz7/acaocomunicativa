@@ -4,18 +4,15 @@
 	</div>
 
 	
-	<div x-show.transition='searchModel' class="fixed z-10 top-0 left-0 bg-white mx-auto top-0 w-full" style="display: none;">
+	<div x-show.transition='searchModel' class="fixed z-10 top-0 left-0 bg-white mx-auto top-0 w-full" style="display: none;background: url({{asset('img/marca-dagua-pesquisa.png')}} ) no-repeat -100px -100px ; background-color: #fff;">
 		<div class="max-w-6xl mx-auto h-screen flex flex-col pb-10">
 			<div class="text-right px-6 pt-3">
 				<button @click='searchModel = false' class="text-gray-600 font-bold text-xl px-3 active:outline-none focus:outline-none border rounded">X</button>
 			</div>	
-			<div class="relative">
-				<img src="{{ asset('img/marca-dagua.png') }}" class="opacity-5 absolute left-0 " style="top: -250px; left: -400px">
-			</div>
 			<div>
 				<div class="text-3xl  mb-8 sm:flex">
 					<div class="px-4   flex-1">
-						<input wire:model.debounce.500ms='search' id='search-bar' type="text" class="border-b border-gray-300 w-full focus:outline-none" autofocus="autofocus" placeholder="Pesquisar por...">
+						<input wire:model.debounce.500ms='search' id='search-bar' type="text" class="border-b border-gray-300 w-full focus:outline-none p-4 bg-transparent" autofocus="autofocus" placeholder="Pesquisar por...">
 					</div>
 				</div>
 			</div>
