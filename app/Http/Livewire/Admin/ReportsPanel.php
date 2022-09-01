@@ -87,7 +87,7 @@ class ReportsPanel extends Component
         $report->date = $this->newReportDate;
         $report->file = $file;
         $report->cover = $cover;
-        $slug = Str::slug($this->title, '-');
+        $slug = Str::slug($this->newReportTitle, '-');
         $report->slug = $slug;
         $report->save();
 
