@@ -8,7 +8,7 @@
 
         @yield('meta')
 
-        <title> @yield('title') Ação Comunicativa 22222</title>
+        <title> @yield('title') Ação Comunicativa </title>
 
         <link rel="icon" href="favicon.ico" />
 
