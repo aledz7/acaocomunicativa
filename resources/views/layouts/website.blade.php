@@ -64,7 +64,7 @@
                         <div class="sm:text-left">
                             <div class="sm:flex items-center">
                                 <div>
-                                    <img src="/img/logo-verbas.png" class="-mt-1" alt="Verbas da Saúde - Rastreamento das destinações das verbas públicas para a saúde" title="Verbas da Saúde - Rastreamento das destinações das verbas públicas para a saúde" >
+                                    <img src="/img/logo-verbas.png" style="width: 115px;" class="-mt-1" alt="Verbas da Saúde - Rastreamento das destinações das verbas públicas para a saúde" title="Verbas da Saúde - Rastreamento das destinações das verbas públicas para a saúde" >
                                 </div>
                                 <div class="hidden sm:block border-t w-4 mx-4">
                                     
@@ -203,7 +203,7 @@
                             <a href='mailto:contato@acaocomunicativa.com.br' title='Falar com a {{ config("app.name") }}' class="text-blue-900">contato@acaocomunicativa.com.br</a>
                         </p>
                         <p class="text-gray-600 mt-4"> 
-                            SHIS QI 09 Bloco A sala 107 Lago Sul – Brasília – DF CEP: 71.625-171
+                         SHIN QI 12 CONJUNTO 8 CASA 7 Lago Sul – Brasília – DF - CEP: 71.625-171
                         </p>
     				</div>
     			</div>
