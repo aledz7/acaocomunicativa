@@ -203,7 +203,7 @@
                             <a href='mailto:contato@acaocomunicativa.com.br' title='Falar com a {{ config("app.name") }}' class="text-blue-900">contato@acaocomunicativa.com.br</a>
                         </p>
                         <p class="text-gray-600 mt-4"> 
-                         SHIN QI 12 CONJUNTO 8 CASA 7 Lago Sul – Brasília – DF - CEP: 71.625-171
+                         SHIN QI 12 CONJUNTO 8 CASA 7 Lago Sul – Brasília – DF - CEP: 71.525-280
                         </p>
     				</div>
     			</div>
