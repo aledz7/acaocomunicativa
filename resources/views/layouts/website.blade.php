@@ -64,7 +64,7 @@
                         <div class="sm:text-left">
                             <div class="sm:flex items-center">
                                 <div>
-                                    <img src="/img/verbas-da-saude-logo-horizontal.png" class="-mt-1" alt="Verbas da Saúde - Rastreamento das destinações das verbas públicas para a saúde" title="Verbas da Saúde - Rastreamento das destinações das verbas públicas para a saúde" >
+                                    <img src="/img/logo-verbas.png" class="-mt-1" alt="Verbas da Saúde - Rastreamento das destinações das verbas públicas para a saúde" title="Verbas da Saúde - Rastreamento das destinações das verbas públicas para a saúde" >
                                 </div>
                                 <div class="hidden sm:block border-t w-4 mx-4">
                                     
@@ -74,7 +74,7 @@
                         </div>
                         <div class="text-center sm:flex sm:space-x-3">
                             <div class="flex">
-                                <i>Em breve</i>
+                                
                                 <!-- <div class="px-3 border-r border-l"> Login </div>
                                 <div class="px-3 border-r"> Assinar </div> -->
                             </div>
