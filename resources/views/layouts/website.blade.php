@@ -64,7 +64,9 @@
                         <div class="sm:text-left">
                             <div class="sm:flex items-center">
                                 <div>
-                                    <img src="/img/logo-verbas.png" style="width: 115px;" class="-mt-1" alt="Verbas da Saúde - Rastreamento das destinações das verbas públicas para a saúde" title="Verbas da Saúde - Rastreamento das destinações das verbas públicas para a saúde" >
+                                    <a href="https://verbasdasaude.com.br/" target="_blank">
+                                        <img src="/img/logo-verbas.png" style="width: 115px;" class="-mt-1" alt="Verbas da Saúde - Rastreamento das destinações das verbas públicas para a saúde" title="Verbas da Saúde - Rastreamento das destinações das verbas públicas para a saúde" >
+                                    </a>
                                 </div>
                                 <div class="hidden sm:block border-t w-4 mx-4">
                                     
